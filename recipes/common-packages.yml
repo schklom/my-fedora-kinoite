@@ -8,7 +8,10 @@ modules:
       # - starship
       - distrobox # run any os in containers easily
       - htop # Better "top"
+      - ffmpeg
       - kdepim-addons # For the Event Calendar widget, to work with external calendars
+      - kde-connect
+      - kdeconnectd
       - kontact # Calendar + Contact + Task manager. If installed via Flatpak, it will not work with Event Calendar.
       - libvirt # Run VMs
       - mono-complete # KeePass

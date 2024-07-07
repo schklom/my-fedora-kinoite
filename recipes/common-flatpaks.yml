@@ -26,9 +26,10 @@ modules:
         - org.kde.kwrite
         - org.videolan.VLC
         - com.stremio.Stremio
-        - com.obsproject.Studio
+        # - com.obsproject.Studio
         - com.github.iwalton3.jellyfin-media-player
         - org.gnome.Shotwell
+        - org.kde.gwenview
         - tv.kodi.Kodi
         # - org.clementine_player.Clementine
         - net.sapples.LiveCaptions

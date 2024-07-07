@@ -70,6 +70,7 @@ modules:
         - dev.lasheen.qr
         - org.kde.krename
         - xyz.xclicker.xclicker
+        - com.nextcloud.desktopclient.nextcloud
         
       # remove:
       # - org.gnome.eog

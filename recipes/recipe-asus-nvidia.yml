@@ -4,9 +4,11 @@ name: my-fedora-kinoite-asus-nvidia-userns-hardened
 description: A starting point for further customization of uBlue images. Make your own! https://universal-blue.org/tinker/make-your-own/. I added layers to run KeePass (using mono), decode videos better, manage VMs, manage custom shortcuts. Upgraded to images from https://github.com/secureblue/secureblue
 
 # the base image to build on top of (FROM) and the version tag to use
+# https://github.com/orgs/ublue-os/packages
 # base-image: ghcr.io/ublue-os/kinoite-main
 # https://github.com/secureblue/secureblue
-base-image: ghcr.io/secureblue/kinoite-asus-nvidia-userns-hardened
+# base-image: ghcr.io/secureblue/kinoite-asus-nvidia-userns-hardened
+base-image: ghcr.io/ublue-os/bazzite-asus-nvidia
 image-version: latest # 40, or latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order

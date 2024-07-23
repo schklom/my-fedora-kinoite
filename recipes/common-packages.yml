@@ -20,6 +20,7 @@ modules:
       - plasma-workspace-x11 # Fedora decided to remove X11, so I have to add it back
       # - usbguard # Protect against unknown USB devices, already in secureblue
       # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostree_based_systems
+      - qemu # Run VMs
       - rpmfusion-free-release
       - rpmfusion-nonfree-release
       - virt-manager # Run VMs

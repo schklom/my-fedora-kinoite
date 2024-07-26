@@ -9,7 +9,7 @@ description: A starting point for further customization of uBlue images. Make yo
 # https://github.com/secureblue/secureblue
 # base-image: ghcr.io/secureblue/kinoite-main-userns-hardened
 base-image: ghcr.io/ublue-os/bazzite
-image-version: latest # 40, or latest is also supported if you want new updates ASAP
+image-version: stable # 40, or latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module

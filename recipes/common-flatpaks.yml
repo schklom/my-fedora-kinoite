@@ -59,7 +59,7 @@ modules:
         # - com.github.tchx84.Flatseal
         
         # Others
-        - com.valvesoftware.Steam
+        # - com.valvesoftware.Steam # Already in Bazzite
         - net.lutris.Lutris
         - com.usebottles.bottles
         - com.dropbox.Client

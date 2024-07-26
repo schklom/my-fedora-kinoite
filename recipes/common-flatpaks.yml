@@ -56,7 +56,14 @@ modules:
         - com.vscodium.codium
         - org.fedoraproject.MediaWriter
         - org.kde.isoimagewriter
+        
+        # Manage apps
+        # Flatpaks
+        - io.github.flattool.Warehouse
         # - com.github.tchx84.Flatseal
+        # AppImages
+        - it.mijorus.gearlever
+        # - io.github.prateekmedia.appimagepool
         
         # Others
         # - com.valvesoftware.Steam # Already in Bazzite
@@ -66,7 +73,6 @@ modules:
         - org.zotero.Zotero
         # - org.gnome.OCRFeeder
         - org.gnome.Calculator
-        - io.github.prateekmedia.appimagepool
         - dev.lasheen.qr
         - org.kde.krename
         - xyz.xclicker.xclicker

@@ -9,24 +9,31 @@ modules:
       - distrobox # run any os in containers easily
       - htop # Better "top"
       - ffmpeg
+      - mozilla-openh264 # Video support on Firefox
+      - podman-compose # Use docker.compose.yml files with podman
+      - plasma-workspace-x11 # Fedora decided to remove X11, so I have to add it back
+      - xbindkeys # Shortcuts
+      # - usbguard # Protect against unknown USB devices, already in secureblue
+      ## https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostree_based_systems
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
+      ## KDE
       - kdepim-addons # For the Event Calendar widget, to work with external calendars
       - kde-connect
       - kdeconnectd
       - kontact # Calendar + Contact + Task manager. If installed via Flatpak, it will not work with Event Calendar.
-      - libvirt # Run VMs
-      - mono-complete # KeePass
-      - mozilla-openh264 # Video support on Firefox
-      - podman-compose # Use docker.compose.yml files with podman
-      - plasma-workspace-x11 # Fedora decided to remove X11, so I have to add it back
-      # - usbguard # Protect against unknown USB devices, already in secureblue
-      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostree_based_systems
-      - qemu # Run VMs
-      - rpmfusion-free-release
-      - rpmfusion-nonfree-release
-      - virt-manager # Run VMs
-      - xbindkeys # Shortcuts
-      - xdotool # KeePass
-      - xinput # KeePass
+      ## KeePass
+      - mono-complete
+      - xdotool
+      - xinput
+      ## Run VMs
+      - libvirt
+      - qemu
+      - virt-manager
+      ## Read DVDs (https://itsfoss.com/play-dvd-fedora/)
+      - rpmfusion-free-release-tainted
+      - libdvdcss
+      
 
     remove:
       # example: removing firefox (in favor of the flatpak)

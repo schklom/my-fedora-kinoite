@@ -14,27 +14,31 @@ modules:
       - plasma-workspace-x11 # Fedora decided to remove X11, so I have to add it back
       - xbindkeys # Shortcuts
       # - usbguard # Protect against unknown USB devices, already in secureblue
-      ## https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostree_based_systems
+      
+      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostree_based_systems
       - rpmfusion-free-release
       - rpmfusion-nonfree-release
-      ## KDE
+      
+      # KDE
       - kdepim-addons # For the Event Calendar widget, to work with external calendars
       - kde-connect
       - kdeconnectd
       - kontact # Calendar + Contact + Task manager. If installed via Flatpak, it will not work with Event Calendar.
-      ## KeePass
+      
+      # KeePass
       - mono-complete
       - xdotool
       - xinput
-      ## Run VMs
+      
+      # Run VMs
       - libvirt
       - qemu
       - virt-manager
-      ## Read DVDs (https://itsfoss.com/play-dvd-fedora/)
+      
+      # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
       - rpmfusion-free-release-tainted
       - libdvdcss
       
-
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency

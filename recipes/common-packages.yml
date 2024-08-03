@@ -34,6 +34,10 @@ modules:
       # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
       #- rpmfusion-free-release-tainted
       - libdvdcss
+
+      # Text to speech
+      - espeak-ng
+      - xsel
       
     remove:
       # example: removing firefox (in favor of the flatpak)

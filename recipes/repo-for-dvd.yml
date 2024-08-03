@@ -1,0 +1,5 @@
+modules:
+  - type: rpm-ostree
+    install:
+      # To read DVDs (install libdvdcss) (https://itsfoss.com/play-dvd-fedora/)
+      - rpmfusion-free-release-tainted

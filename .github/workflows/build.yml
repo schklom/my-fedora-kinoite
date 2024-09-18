@@ -6,13 +6,18 @@ on:
   push:
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
+    branches:
+      - my-changes
       
   pull_request:
+    branches:
+      - my-changes
   workflow_dispatch: # allow manually triggering builds
 jobs:
   bluebuild:
     name: Build Custom Image
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/my-changes'
     permissions:
       contents: read
       packages: write

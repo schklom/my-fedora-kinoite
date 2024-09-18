@@ -28,7 +28,7 @@ modules:
         - com.stremio.Stremio
         # - com.obsproject.Studio
         - com.github.iwalton3.jellyfin-media-player
-        - com.github.iwalton3.jellyfin-mpv-shim
+        # - com.github.iwalton3.jellyfin-mpv-shim
         - io.mpv.Mpv
         - org.gnome.Shotwell
         - org.kde.gwenview

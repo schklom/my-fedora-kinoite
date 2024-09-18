@@ -1,4 +1,4 @@
-# my-fedora-kinoite &nbsp; [![build-ublue](https://github.com/schklom/my-fedora-kinoite/actions/workflows/build.yml/badge.svg)](https://github.com/schklom/my-fedora-kinoite/actions/workflows/build.yml)
+# BlueBuild Template &nbsp; [![bluebuild build badge](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
@@ -36,7 +36,7 @@ To rebase an existing atomic Fedora installation to the latest build:
   systemctl reboot
   ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`-like files, so you won't get accidentally updated to the next major version.
 
 ## Undo
 

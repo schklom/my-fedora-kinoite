@@ -15,8 +15,9 @@ modules:
     snippets:
       # Avoid error when runnning sudo systemctl start usbguard.service
       # Original error: "AuditFileSink: /var/log/usbguard/usbguard-audit.log: failed to open"
-      - "mkdir -p /var/log/usbguard/"
-      - "touch /var/log/usbguard/usbguard-audit.log"
+      # TAKEN CARE OF BY FILES MODULE
+      #- "mkdir -p /var/log/usbguard/"
+      #- "touch /var/log/usbguard/usbguard-audit.log"
       # Make all users in usbguardgroup be able to use usbguard-notifier (listen), list rules (list) and modify them (modify), i.e. have ALL privileges
       # This rule is stored in /etc/usbguard/IPCAccessControl.d/:usbguardgroup
       # By default, only user root and group wheel are allowed (c.f. /etc/usbguard/usbguard-daemon.conf) everything

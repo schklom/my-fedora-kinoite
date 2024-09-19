@@ -11,7 +11,7 @@ modules:
   #    - "echo 'SystemMaxUse=400M' > /etc/systemd/journald.conf.d/max_size.conf"
   - type: files
     files:
-      - source: system   # copies `files/system/*` (* means everything inside it) into your image's root folder `/`
+      - source: root
         destination: /
 
   # Ledger problems

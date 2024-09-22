@@ -32,9 +32,9 @@ modules:
         - io.mpv.Mpv
         - org.gnome.Shotwell
         - org.kde.gwenview
-        - tv.kodi.Kodi
+        # - tv.kodi.Kodi
         # - org.clementine_player.Clementine
-        - net.sapples.LiveCaptions
+        # - net.sapples.LiveCaptions
         # - com.github.marinm.songrec
         
         # Network
@@ -68,7 +68,7 @@ modules:
         
         # Others
         # - com.valvesoftware.Steam # Already in Bazzite
-        - net.lutris.Lutris
+        # - net.lutris.Lutris
         - com.usebottles.bottles
         - com.dropbox.Client
         - org.zotero.Zotero

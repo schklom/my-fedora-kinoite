@@ -5,10 +5,10 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 # https://github.com/orgs/ublue-os/packages
-# base-image: ghcr.io/ublue-os/kinoite-main
+base-image: ghcr.io/ublue-os/kinoite-asus-nvidia
 # https://github.com/secureblue/secureblue
 # base-image: ghcr.io/secureblue/kinoite-asus-nvidia-userns-hardened
-base-image: ghcr.io/ublue-os/bazzite-asus-nvidia
+# base-image: ghcr.io/ublue-os/bazzite-asus-nvidia
 image-version: stable # 40, or latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order

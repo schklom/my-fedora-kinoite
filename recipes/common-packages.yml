@@ -30,10 +30,12 @@ modules:
       - libvirt
       - qemu
       - virt-manager
-      
+
+      # Media
       # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
       #- rpmfusion-free-release-tainted
       - libdvdcss
+      - gwenview # It often fails to open files as a flatpak
 
       # Text to speech
       - espeak-ng

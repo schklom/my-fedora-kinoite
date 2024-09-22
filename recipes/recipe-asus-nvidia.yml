@@ -9,7 +9,7 @@ base-image: ghcr.io/ublue-os/kinoite-asus-nvidia
 # https://github.com/secureblue/secureblue
 # base-image: ghcr.io/secureblue/kinoite-asus-nvidia-userns-hardened
 # base-image: ghcr.io/ublue-os/bazzite-asus-nvidia
-image-version: stable # 40, or latest is also supported if you want new updates ASAP
+image-version: latest # 40, or latest is also supported if you want new updates ASAP. stable only for bazzite
 
 # module configuration, executed in order
 # you can include multiple instances of the same module

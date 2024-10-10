@@ -16,8 +16,8 @@ image-version: latest # 40, or latest is also supported if you want new updates 
 # https://blue-build.org/learn/getting-started/
 modules:
 
-  - from-file: repo-for-dvd.yml
   - from-file: extra-repos.yml
+  - from-file: repo-for-dvd.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
   - from-file: common-extra-modules.yml

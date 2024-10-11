@@ -13,7 +13,10 @@ image-version: stable # 40, or latest is also supported if you want new updates 
 
 # https://blue-build.org/learn/getting-started/
 modules:
-  - from-file: extra-repos.yml
+  - type: rpm-ostree
+    install:
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
   - from-file: repo-for-dvd.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml

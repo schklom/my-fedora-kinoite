@@ -1,5 +1,10 @@
 modules:
   - type: rpm-ostree
+    uninstall:
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
+  
+  - type: rpm-ostree
     repos:
       - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free.repo
     keys:

@@ -1,6 +1,6 @@
 modules:
   - type: rpm-ostree
-    uninstall:
+    remove:
       - rpmfusion-free-release
       - rpmfusion-nonfree-release
   

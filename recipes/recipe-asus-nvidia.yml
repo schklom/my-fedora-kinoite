@@ -30,7 +30,7 @@ modules:
 
       # https://www.debugpoint.com/enable-rpm-fusion-fedora-rhel-centos/#Silverblue_with_rpm-ostree
       # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_using_command_line_utilities
-      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
+      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm
   
   - type: rpm-ostree
     repos:
@@ -47,7 +47,7 @@ modules:
 
       # https://www.debugpoint.com/enable-rpm-fusion-fedora-rhel-centos/#Silverblue_with_rpm-ostree
       # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_using_command_line_utilities
-      - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
+      - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm
 
   - from-file: repo-for-dvd.yml
   - from-file: common-packages.yml

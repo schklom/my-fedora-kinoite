@@ -15,6 +15,12 @@ image-version: latest # 40, or latest is also supported if you want new updates 
 # you can include multiple instances of the same module
 # https://blue-build.org/learn/getting-started/
 modules:
+  # We install these from original repository after, and they conflict with ublue's version
+  - type: rpm-ostree
+    remove:
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
+
   - from-file: common-repos.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml

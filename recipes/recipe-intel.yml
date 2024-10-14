@@ -13,34 +13,12 @@ image-version: stable # 40, or latest is also supported if you want new updates 
 
 # https://blue-build.org/learn/getting-started/
 modules:
-  #- type: rpm-ostree
-  #  install:
-  #    - rpmfusion-free-release
-  #    - rpmfusion-nonfree-release
+  # We install these from original repository after, and they conflict with Bazzite's version
   - type: rpm-ostree
-    repos:
-      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free.repo
-      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/rpmfusion-nonfree.repo
-    keys:
-      # https://rpmfusion.org/keys
-      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
-      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
-    install:
-      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostree_based_systems
-      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
-      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
+    remove:
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
 
-      # https://www.debugpoint.com/enable-rpm-fusion-fedora-rhel-centos/#Silverblue_with_rpm-ostree
-      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_using_command_line_utilities
-      #- https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
-      #- https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
-
-  - from-file: common-repos.yml
-  - from-file: common-packages.yml
-  - from-file: common-flatpaks.yml
-  - from-file: common-extra-modules.yml
-  - from-file: desktop-dotfiles.yml
-  - from-file: usbguard.yml
   - type: rpm-ostree
     install:
       - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
@@ -48,3 +26,10 @@ modules:
       - mozilla-openh264 # Video support on Firefox
     remove:
       - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872
+
+  - from-file: common-repos.yml
+  - from-file: common-packages.yml
+  - from-file: common-flatpaks.yml
+  - from-file: common-extra-modules.yml
+  - from-file: desktop-dotfiles.yml
+  - from-file: usbguard.yml

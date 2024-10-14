@@ -47,7 +47,6 @@ modules:
   - type: rpm-ostree
     install:
       - intel-media-driver
-      - mesa
 
   - type: rpm-ostree
     install:

@@ -20,6 +20,11 @@ modules:
       - rpmfusion-nonfree-release
 
   - from-file: common-repos.yml
+  - from-file: common-packages.yml
+  - from-file: common-flatpaks.yml
+  - from-file: common-extra-modules.yml
+  - from-file: desktop-dotfiles.yml
+  - from-file: usbguard.yml
 
   - type: rpm-ostree
     repos: https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/rpmfusion-nonfree.repo
@@ -33,9 +38,3 @@ modules:
     remove:
       - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872
 
-
-  - from-file: common-packages.yml
-  - from-file: common-flatpaks.yml
-  - from-file: common-extra-modules.yml
-  - from-file: desktop-dotfiles.yml
-  - from-file: usbguard.yml

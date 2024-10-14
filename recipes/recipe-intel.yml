@@ -13,11 +13,29 @@ image-version: stable # 40, or latest is also supported if you want new updates 
 
 # https://blue-build.org/learn/getting-started/
 modules:
-  # We install these from original repository after, and they conflict with Bazzite's version
+modules:
   - type: rpm-ostree
-    install:
+    remove:
       - rpmfusion-free-release
       - rpmfusion-nonfree-release
+  
+  - type: rpm-ostree
+    repos:
+      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free.repo
+    keys:
+      # https://rpmfusion.org/keys
+      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
+    install:
+      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
+  
+  - type: rpm-ostree
+    repos:
+      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/rpmfusion-nonfree.repo
+    keys:
+      # https://rpmfusion.org/keys
+      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+    install:
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
 
   - from-file: common-repos.yml
   - from-file: common-packages.yml

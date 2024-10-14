@@ -45,6 +45,9 @@ modules:
 
   # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
   - type: rpm-ostree
+    remove:
+      - intel-media-driver
+  - type: rpm-ostree
     install:
       - intel-media-driver
 

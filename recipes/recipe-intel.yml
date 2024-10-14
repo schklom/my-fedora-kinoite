@@ -50,6 +50,7 @@ modules:
   - type: rpm-ostree
     install:
       - intel-media-driver
+      - libva-intel-media-driver
 
   - type: rpm-ostree
     install:

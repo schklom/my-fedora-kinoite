@@ -26,10 +26,11 @@ modules:
   - from-file: desktop-dotfiles.yml
   - from-file: usbguard.yml
 
+  # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
   - type: rpm-ostree
-    repos: https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/rpmfusion-nonfree.repo
     install:
-      - intel-media-driver # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
+      - intel-media-driver
+      - mesa
 
   - type: rpm-ostree
     install:

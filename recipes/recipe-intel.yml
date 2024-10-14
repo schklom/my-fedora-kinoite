@@ -24,10 +24,13 @@ modules:
   - type: rpm-ostree
     install:
       - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
-      - intel-media-driver # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
       - mozilla-openh264 # Video support on Firefox
     remove:
       - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872
+    replace:
+      - from-repo: rpmfusion-nonfree
+        packages:
+          - intel-media-driver # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
 
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml

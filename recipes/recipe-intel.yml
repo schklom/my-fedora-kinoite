@@ -13,10 +13,28 @@ image-version: stable # 40, or latest is also supported if you want new updates 
 
 # https://blue-build.org/learn/getting-started/
 modules:
+  #- type: rpm-ostree
+  #  install:
+  #    - rpmfusion-free-release
+  #    - rpmfusion-nonfree-release
   - type: rpm-ostree
+    repos:
+      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free.repo
+      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/rpmfusion-nonfree.repo
+    keys:
+      # https://rpmfusion.org/keys
+      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
+      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
     install:
-      - rpmfusion-free-release
-      - rpmfusion-nonfree-release
+      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostree_based_systems
+      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
+
+      # https://www.debugpoint.com/enable-rpm-fusion-fedora-rhel-centos/#Silverblue_with_rpm-ostree
+      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_using_command_line_utilities
+      #- https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
+      #- https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
+  
   - from-file: repo-for-dvd.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml

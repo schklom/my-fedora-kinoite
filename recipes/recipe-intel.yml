@@ -19,6 +19,8 @@ modules:
       - rpmfusion-free-release
       - rpmfusion-nonfree-release
 
+  - from-file: common-repos.yml
+
   - type: rpm-ostree
     install:
       - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
@@ -27,7 +29,6 @@ modules:
     remove:
       - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872
 
-  - from-file: common-repos.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
   - from-file: common-extra-modules.yml

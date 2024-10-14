@@ -17,24 +17,6 @@ modules:
     remove:
       - rpmfusion-free-release
       - rpmfusion-nonfree-release
-  
-  - type: rpm-ostree
-    repos:
-      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free.repo
-    keys:
-      # https://rpmfusion.org/keys
-      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
-    install:
-      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
-  
-  - type: rpm-ostree
-    repos:
-      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/rpmfusion-nonfree.repo
-    keys:
-      # https://rpmfusion.org/keys
-      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
-    install:
-      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
 
   - from-file: common-repos.yml
   - from-file: common-packages.yml
@@ -45,6 +27,7 @@ modules:
 
   # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
   - type: rpm-ostree
+    # Need to remove this first otherwise it conflicts with intel-media-driver
     remove:
       - libva-intel-media-driver
   - type: rpm-ostree

@@ -13,7 +13,6 @@ image-version: stable # 40, or latest is also supported if you want new updates 
 
 # https://blue-build.org/learn/getting-started/
 modules:
-modules:
   - type: rpm-ostree
     remove:
       - rpmfusion-free-release

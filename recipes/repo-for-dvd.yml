@@ -7,4 +7,4 @@ modules:
       - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
     install:
       # To read DVDs (install libdvdcss) (https://itsfoss.com/play-dvd-fedora/)
-      - rpmfusion-free-release-tainted
+      - rpmfusion-free-tainted

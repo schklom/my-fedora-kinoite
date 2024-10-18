@@ -20,6 +20,7 @@ modules:
       - kde-connect
       - kdeconnectd
       - kontact # Calendar + Contact + Task manager. If installed via Flatpak, it will not work with Event Calendar.
+      - pim-data-exporter
       
       # KeePass
       - mono-complete

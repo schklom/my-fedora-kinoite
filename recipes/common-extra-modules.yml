@@ -6,9 +6,3 @@ modules:
     files:
       - source: root
         destination: /
-
-  # https://blue-build.org/reference/modules/systemd/
-  - type: systemd
-    user:
-      disabled:
-        - rpm-ostreed-automatic.timer

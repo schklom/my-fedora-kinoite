@@ -1,22 +1,14 @@
 # https://blue-build.org/how-to/multiple-files/
 modules:
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing # this sets up the proper policy & signing files for signed images to work f
 
-  # https://blue-build.org/reference/modules/script/
-  #- type: script
-  #  snippets:
-  #    # Journald size limits
-  #    # - "sed -i 's|#SystemMaxUse=|SystemMaxUse=200M|' /etc/systemd/journald.conf"
-  #    - "mkdir -p /etc/systemd/journald.conf.d/"
-  #    - "echo 'SystemMaxUse=400M' > /etc/systemd/journald.conf.d/max_size.conf"
   - type: files
     files:
       - source: root
         destination: /
 
-  # Ledger problems
-  # https://support.ledger.com/article/115005165269-zd
-  # DOES NOT WORK
-  #- type: script
-  #  snippets:
-  #    - "wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash"
+  # https://blue-build.org/reference/modules/systemd/
+  - type: systemd
+    user:
+      disabled:
+        - rpm-ostreed-automatic.timer

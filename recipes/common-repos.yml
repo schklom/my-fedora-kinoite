@@ -1,0 +1,38 @@
+modules:
+  # RPMFUSION FREE
+  - type: rpm-ostree
+    repos:
+      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free.repo
+    keys:
+      # https://rpmfusion.org/keys
+      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
+    install:
+      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostre>
+      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
+      # https://www.debugpoint.com/enable-rpm-fusion-fedora-rhel-centos/#Silverblue_with_rpm-ostree
+      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_using_com>
+      #- https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-%OS_VERSION%.noarch.rpm
+      #- https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
+
+  # RPMFUSION NONFREE
+  - type: rpm-ostree
+    repos:
+      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/rpmfusion-nonfree.repo
+    keys:
+      # https://rpmfusion.org/keys
+      - https://github.com/rpmfusion/rpmfusion-nonfree-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+    install:
+      # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostre>
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
+
+  # RPMFUSION FREE TAINTED
+  - type: rpm-ostree
+    repos:
+      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free-tainted.repo
+    keys:
+      # https://rpmfusion.org/keys
+      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
+    install:
+      # To read DVDs (install libdvdcss) (https://itsfoss.com/play-dvd-fedora/)
+      - https://download1.rpmfusion.org/free/fedora/releases/%OS_VERSION%/Everything/x86_64/os/Packages/r/rpmfusion-free-release-tainted-%OS_VERSION%-1.noarch.rpm
+      # - rpmfusion-free-release-tainted ONLY WORKS ON BAZZITE

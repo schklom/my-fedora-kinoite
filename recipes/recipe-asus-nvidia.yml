@@ -1,0 +1,23 @@
+# image will be published to ghcr.io/<user>/<name>
+name: my-fedora-kinoite-asus-nvidia
+# description will be included in the image's metadata
+description: This is my personal OS image.
+
+# the base image to build on top of (FROM) and the version tag to use
+# https://github.com/orgs/ublue-os/packages
+base-image: ghcr.io/ublue-os/kinoite-asus-nvidia
+# https://github.com/secureblue/secureblue
+# base-image: ghcr.io/secureblue/kinoite-asus-nvidia-userns-hardened
+# base-image: ghcr.io/ublue-os/bazzite-asus-nvidia
+image-version: latest # 40, or latest is also supported if you want new updates ASAP. stable only for bazzite
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+# https://blue-build.org/learn/getting-started/
+modules:
+  - from-file: common-repos.yml
+  - from-file: common-packages.yml
+  - from-file: common-flatpaks.yml
+  - from-file: common-extra-modules.yml
+  - from-file: desktop-dotfiles.yml
+  - from-file: usbguard.yml

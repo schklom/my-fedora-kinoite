@@ -2,7 +2,7 @@ name: bluebuild
 on:
   schedule:
     - cron:
-        "00 06 * * TUE,THU,SAT,SUN" # build at 06:00 UTC every day
+        "00 06 * * *" # build at 06:00 UTC every day
         # (20 minutes after last ublue images start building)
   push:
     paths-ignore: # don't rebuild if only documentation has changed
@@ -31,9 +31,8 @@ jobs:
       fail-fast: false # stop GH from cancelling all matrix builds if one fails
       matrix:
         recipe:
-          # !! Add your recipes here 
-          - recipe-intel.yml
-          - recipe-asus-nvidia.yml
+          # !! Add your recipes here
+          - recipe.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

@@ -1,0 +1,46 @@
+# https://blue-build.org/how-to/multiple-files/
+modules:
+  - type: rpm-ostree
+    #repos:
+      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    install:
+      # - micro
+      # - starship
+      - distrobox # run any os in containers easily
+      - htop # Better "top"
+      - ffmpeg
+      - podman-compose # Use docker.compose.yml files with podman
+      - plasma-workspace-x11 # Fedora decided to remove X11, so I have to add it back
+      - xbindkeys # Shortcuts
+      - rclone
+      - rclone-browser
+      
+      # KDE
+      - kdepim-addons # For the Event Calendar widget, to work with external calendars
+      - kde-connect
+      - kdeconnectd
+      - kontact # Calendar + Contact + Task manager. If installed via Flatpak, it will not work with Event Calendar.
+      - pim-data-exporter
+      
+      # KeePass
+      - mono-complete
+      - xdotool
+      - xinput
+      
+      # Run VMs
+      - libvirt
+      - qemu
+      - virt-manager
+
+      # Media
+      # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
+      #- rpmfusion-free-release-tainted
+      - libdvdcss
+      - gwenview # It often fails to open files as a flatpak
+
+      # Text to speech
+      - espeak-ng
+      - xsel
+
+      # Beep
+      - beep

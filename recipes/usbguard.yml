@@ -1,0 +1,26 @@
+modules:
+  - type: rpm-ostree
+    install:
+      - usbguard # Protect against unknown USB devices, already in secureblue
+      - usbguard-notifier
+
+  # https://blue-build.org/reference/modules/systemd/
+  - type: systemd
+    user:
+      enabled:
+        - usbguard-notifier.service
+  
+  # https://blue-build.org/reference/modules/script/
+  - type: script
+    snippets:
+      # Avoid error when runnning sudo systemctl start usbguard.service
+      # Original error: "AuditFileSink: /var/log/usbguard/usbguard-audit.log: failed to open"
+      # TAKEN CARE OF BY FILES MODULE
+      #- "mkdir -p /var/log/usbguard/"
+      #- "touch /var/log/usbguard/usbguard-audit.log"
+      # Make all users in usbguardgroup be able to use usbguard-notifier (listen), list rules (list) and modify them (modify), i.e. have ALL privileges
+      # This rule is stored in /etc/usbguard/IPCAccessControl.d/:usbguardgroup
+      # By default, only user root and group wheel are allowed (c.f. /etc/usbguard/usbguard-daemon.conf) everything
+      # man 5 usbguard-daemon.conf says this is generally usable and reasonably safe
+      - "groupadd --gid 10000 usbguardgroup"
+      - "usbguard add-user --group usbguardgroup --devices ALL --policy list --exceptions listen"

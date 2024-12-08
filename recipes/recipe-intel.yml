@@ -1,0 +1,44 @@
+# image will be published to ghcr.io/<user>/<name>
+name: my-fedora-kinoite-intel
+# description will be included in the image's metadata
+description: This is my personal OS image.
+
+# the base image to build on top of (FROM) and the version tag to use
+# https://github.com/orgs/ublue-os/packages
+# base-image: ghcr.io/ublue-os/kinoite-main
+# https://github.com/secureblue/secureblue
+# base-image: ghcr.io/secureblue/kinoite-main-userns-hardened
+base-image: ghcr.io/ublue-os/bazzite
+image-version: stable # 40, or latest is also supported if you want new updates ASAP
+
+# https://blue-build.org/learn/getting-started/
+modules:
+  - type: rpm-ostree
+    remove:
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
+
+  - from-file: common-repos.yml
+  - from-file: common-packages.yml
+  - from-file: common-flatpaks.yml
+  - from-file: common-extra-modules.yml
+  - from-file: desktop-dotfiles.yml
+  - from-file: usbguard.yml
+
+  # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
+  - type: rpm-ostree
+    # Need to remove this first otherwise it conflicts with intel-media-driver
+    remove:
+      - libva-intel-media-driver
+  - type: rpm-ostree
+    install:
+      - intel-media-driver
+      - libva-intel-media-driver
+
+  - type: rpm-ostree
+    install:
+      - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
+      - mozilla-openh264 # Video support on Firefox
+    remove:
+      - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872
+

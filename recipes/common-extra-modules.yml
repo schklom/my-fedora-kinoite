@@ -1,0 +1,8 @@
+# https://blue-build.org/how-to/multiple-files/
+modules:
+  - type: signing # this sets up the proper policy & signing files for signed images to work f
+
+  - type: files
+    files:
+      - source: root
+        destination: /

@@ -78,6 +78,7 @@ modules:
         - org.kde.krename
         - xyz.xclicker.xclicker
         - com.nextcloud.desktopclient.nextcloud
+        - org.gnome.Cheese
         
       # remove:
       # - org.gnome.eog

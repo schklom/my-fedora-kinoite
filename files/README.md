@@ -5,3 +5,4 @@
 - [/etc/systemd/system/rpm-ostreed.service.d/lower_resources.conf](root/etc/systemd/system/rpm-ostreed.service.d/lower_resources.conf) -> stop freezing the system when `rpm-ostree upgrade`
 - ~~[/etc/systemd/system/rpm-ostreed-automatic.timer.d/disable-auto-updates.conf](root/etc/systemd/system/rpm-ostreed-automatic.timer.d/disable-auto-updates.conf) -> disable system auto-updates. This one cannot be disabled (service not found) by a bluebuild module, so this will have to do~~ (file is commented)
 - [/etc/rpm-ostreed.conf](root/etc/rpm-ostreed.conf) -> only check system updates
+- [/etc/screenrc](root/etc/screenrc) -> Disable the alternate screen buffer to allow Konsole's scrollbar to function, and Increase the default scrollback buffer size to 10,000 lines

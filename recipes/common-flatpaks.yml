@@ -79,6 +79,7 @@ modules:
         - xyz.xclicker.xclicker
         - com.nextcloud.desktopclient.nextcloud
         - org.gnome.Cheese
+        - org.freedesktop.Piper # Mouse configuration
         
       # remove:
       # - org.gnome.eog

@@ -44,3 +44,6 @@ modules:
 
       # Beep
       - beep
+
+      # Mouse configuration (https://github.com/libratbag/piper/wiki/Installation)
+      - libratbag-ratbagd

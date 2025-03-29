@@ -24,3 +24,6 @@ modules:
       # man 5 usbguard-daemon.conf says this is generally usable and reasonably safe
       - "groupadd --gid 10000 usbguardgroup"
       - "usbguard add-user --group usbguardgroup --devices ALL --policy list --exceptions listen"
+      # New same error Original error: "AuditFileSink: /var/log/usbguard/usbguard-audit.log: failed to open"
+      # So abandon file and use audit in /var/log/audit/audit.log
+      - "sed -i 's|AuditBackend=FileAudit|AuditBackend=LinuxAudit|g' /etc/usbguard/usbguard-daemon.conf"

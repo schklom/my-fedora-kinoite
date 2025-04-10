@@ -5,6 +5,7 @@ Documentation=man:flatpak(1)
 
 [Service]
 Type=simple
+ExecStartPre=/bin/sleep 5m
 ExecStartPre=/bin/sh -c 'until ping -c1 perdu.com; do sleep 5; done;'
 ExecStart=/usr/bin/flatpak update -y
 # Use less CPU and disk resources to upgrade the system to avoid freezing the computer for 2 minutes
@@ -14,3 +15,6 @@ CPUSchedulingPolicy=idle
 # CPUSchedulingPriority=1 # This breaks the service
 IOSchedulingClass=idle
 # IOSchedulingPriority # ignored when IOSchedulingClass=idle, c.f. man ionice
+
+[Install]
+WantedBy=multi-user.target

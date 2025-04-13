@@ -10,7 +10,7 @@ Wants=network-online.target
 Type=oneshot
 ExecStartPre=/bin/sleep 5m
 ExecStartPre=/bin/sh -c 'until ping -c1 perdu.com; do sleep 5; done;'
-ExecStart=/usr/bin/flatpak update -y
+ExecStart=/usr/bin/flatpak update --assumeyes --noninteractive
 # Use less CPU and disk resources to upgrade the system to avoid freezing the computer for 2 minutes
 # https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html
 Nice=19

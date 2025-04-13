@@ -4,7 +4,8 @@ Description=flatpak Automatic Update
 Documentation=man:flatpak(1)
 
 [Service]
-Type=simple
+# Type=oneshot ensures that ExecStartPre completes fully before proceeding to ExecStart.
+Type=oneshot
 ExecStartPre=/bin/sleep 5m
 ExecStartPre=/bin/sh -c 'until ping -c1 perdu.com; do sleep 5; done;'
 ExecStart=/usr/bin/flatpak update -y

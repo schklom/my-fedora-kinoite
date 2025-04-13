@@ -1,0 +1,11 @@
+[Unit]
+Description=Setup GRUB Configuration
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/echo 'configfile ${prefix}/user-timeout.cfg' > /boot/grub2/user.cfg
+ExecStart=/usr/bin/echo "set timeout=10" > /boot/grub2/user-timeout.cfg
+
+[Install]
+WantedBy=multi-user.target

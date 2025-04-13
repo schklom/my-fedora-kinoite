@@ -12,4 +12,4 @@
 - [/etc/sysctl.d/10-ip6-privacy.conf](root/etc/sysctl.d/10-ip6-privacy.conf) -> ipv6 privacy addresses
 - [/etc/screenrc](root/etc/screenrc) -> Disable the alternate screen buffer to allow Konsole's scrollbar to function, and increase the default scrollback buffer size to 10,000 lines
 - [/usr/share/ublue-os/firstboot/yafti.yml](root/usr/share/ublue-os/firstboot/yafti.yml) -> YAFTI for first boot to remove Fedora Flatpak repository
-- [/boot/grub2/user.cfg](root/boot/grub2/user.cfg) -> Custom GRUB timeout (10s instead of 5s)
+- [/usr/lib/systemd/system/setup-grub.service](systemd/setup-grub.service) -> Custom GRUB configurations (currently only for timeout of 10 instead of 5s)

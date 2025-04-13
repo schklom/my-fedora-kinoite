@@ -6,6 +6,7 @@ After=local-fs.target
 Type=oneshot
 ExecStart=/bin/sh -c '/usr/bin/echo "set timeout=10" > /boot/grub2/user-timeout.cfg'
 # Escape $ as $$ to prevent systemd from interpreting it
-ExecStart=/bin/sh -c '/usr/bin/echo "configfile $${prefix}/user-timeout.cfg" > /boot/grub2/user.cfg'
+# \$ escapes the dollar sign for the shell
+ExecStart=/bin/sh -c '/usr/bin/echo "configfile \$${prefix}/user-timeout.cfg" > /boot/grub2/user.cfg'
 [Install]
 WantedBy=multi-user.target

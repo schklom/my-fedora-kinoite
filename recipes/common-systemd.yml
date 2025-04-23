@@ -1,5 +1,5 @@
 type: systemd
 system:
   enabled:
-    - flatpak-automatic.service
+    #- flatpak-automatic.service
     - setup-grub.service

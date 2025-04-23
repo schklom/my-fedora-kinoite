@@ -1,9 +1,9 @@
 # Summary of files
 ## Disk / CPU usage
 - [/etc/systemd/journald.conf.d/max_size.conf](root/etc/systemd/journald.conf.d/max_size.conf) -> avoid a journald log file that grows large
+- [/etc/systemd/system/rpm-ostreed.service.d/lower_resources.conf](root/etc/systemd/system/rpm-ostreed.service.d/lower_resources.conf) -> use less CPU and disk resources on `rpm-ostree upgrade`
 - [/etc/systemd/system/flatpak-system-update.d/lower_resources.conf](root/etc/systemd/system/flatpak-system-update.d/lower_resources.conf) -> use less CPU and disk resources on the automatic `flatpak --system update`
 - ~~[/etc/systemd/system/flatpak-system-helper.service.d/lower_resources.conf](root/etc/systemd/system/flatpak-system-helper.service.d/lower_resources.conf) -> use less CPU and disk resources on `flatpak update`~~
-- [/etc/systemd/system/flatpak-system-helper.service.d/lower_resources.conf](root/etc/systemd/system/flatpak-system-helper.service.d/lower_resources.conf) -> use less CPU and disk resources on `flatpak update`
 - [/usr/lib/systemd/system/flatpak-automatic.service](systemd/system/flatpak-automatic.service) -> automatic flatpak updates with low CPU and disk priority
 ## Not needed anymore, but nice to have available
 - [/var/log/usbguard/usbguard-audit.log](root/var/log/usbguard/usbguard-audit.log) -> default log file otherwise `usbguard` crashes on start (not needed anymore since using Audit in usbguard configuration)

@@ -36,3 +36,12 @@ modules:
       # To read DVDs (install libdvdcss) (https://itsfoss.com/play-dvd-fedora/)
       - https://download1.rpmfusion.org/free/fedora/releases/%OS_VERSION%/Everything/x86_64/os/Packages/r/rpmfusion-free-release-tainted-%OS_VERSION%-1.noarch.rpm
       # - rpmfusion-free-release-tainted ONLY WORKS ON BAZZITE
+
+  # Secureblue (to install Trivalent https://github.com/secureblue/Trivalent = Vanadium for desktop)
+  - type: rpm-ostree
+    repos:
+      - https://repo.secureblue.dev/secureblue.repo
+    keys:
+      - https://repo.secureblue.dev/secureblue.gpg
+    install:
+      - secureblue

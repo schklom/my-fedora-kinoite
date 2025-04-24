@@ -43,5 +43,3 @@ modules:
       - https://repo.secureblue.dev/secureblue.repo
     keys:
       - https://repo.secureblue.dev/secureblue.gpg
-    install:
-      - trivalent

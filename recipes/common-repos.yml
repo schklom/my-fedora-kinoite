@@ -50,5 +50,3 @@ modules:
     repos:
       # - https://codecs.fedoraproject.org/openh264/%OS_VERSION%/x86_64/os/media.repo
       - https://negativo17.org/repos/fedora-multimedia.repo
-    install:
-      - mozilla-openh264

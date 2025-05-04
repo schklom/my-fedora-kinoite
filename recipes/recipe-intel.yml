@@ -35,11 +35,4 @@ modules:
     install:
       - intel-media-driver
       - libva-intel-media-driver
-
-  - type: rpm-ostree
-    install:
       - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
-      - mozilla-openh264 # Video support on Firefox
-    remove:
-      - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872
-

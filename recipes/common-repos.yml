@@ -43,3 +43,8 @@ modules:
       - https://repo.secureblue.dev/secureblue.repo
     keys:
       - https://repo.secureblue.dev/secureblue.gpg
+  
+  # Fedora-repos (disabled on Bazzite for some reason). Needed to install mozilla-openh264
+  - type: rpm-ostree
+    install:
+      - fedora-repos

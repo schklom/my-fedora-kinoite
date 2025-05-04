@@ -44,7 +44,10 @@ modules:
     keys:
       - https://repo.secureblue.dev/secureblue.gpg
   
-  # Fedora-repos (disabled on Bazzite for some reason). Needed to install mozilla-openh264
+  # Needed to install mozilla-openh264
+  # Thanks to https://discussion.fedoraproject.org/t/fedora-cisco-openh264-repo-does-not-work/100570/10
   - type: rpm-ostree
+    repos:
+      - https://codecs.fedoraproject.org/openh264/%OS_VERSION%/x86_64/os/media.repo
     install:
-      - fedora-repos
+      - mozilla-openh264

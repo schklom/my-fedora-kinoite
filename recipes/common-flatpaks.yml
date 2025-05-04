@@ -36,6 +36,7 @@ modules:
         # - org.clementine_player.Clementine
         # - net.sapples.LiveCaptions
         # - com.github.marinm.songrec
+        - org.kde.kolourpaint
         
         # Network
         - com.protonvpn.www

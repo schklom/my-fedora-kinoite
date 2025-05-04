@@ -8,7 +8,6 @@ modules:
       # - starship
       - distrobox # run any os in containers easily
       - htop # Better "top"
-      - ffmpeg
       - podman-compose # Use docker.compose.yml files with podman
       - plasma-workspace-x11 # Fedora decided to remove X11, so I have to add it back
       - xbindkeys # Shortcuts
@@ -51,3 +50,10 @@ modules:
 
       # Mouse configuration (https://github.com/libratbag/piper/wiki/Installation)
       - libratbag-ratbagd
+
+      # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)
+      - gstreamer1-plugin-openh264
+      - openh264
+      - mozilla-openh264
+      - ffmpeg
+      - ffmpeg-free

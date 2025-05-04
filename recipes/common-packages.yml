@@ -57,3 +57,6 @@ modules:
       - mozilla-openh264
       - ffmpeg
       - ffmpeg-free
+
+    remove:
+      - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872

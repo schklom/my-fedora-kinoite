@@ -36,3 +36,8 @@ modules:
       - intel-media-driver
       - libva-intel-media-driver
       - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
+
+  # Already provided by Bazzite, but just in case I want to go back do ublue
+  - type: rpm-ostree
+    install:
+      - waydroid

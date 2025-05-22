@@ -38,6 +38,7 @@ modules:
       - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
       - weston # To run Waydroid on X11 using Wayland emulator (weston)
       # - adwaita-cursor-theme # Needed for weston (not actually needed, or eve useful)
+      - python3-pyclip # Copy clipboard to Waydroid
 
   # Already provided by Bazzite, but just in case I want to go back do ublue
   - type: rpm-ostree

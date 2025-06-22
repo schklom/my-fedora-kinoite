@@ -59,5 +59,8 @@ modules:
       - ffmpeg
       # - ffmpeg-free # free or not, can't have both
 
+      # Backup
+      - btrfs-assistant (pre-installed on Bazzite)
+
     remove:
       - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872

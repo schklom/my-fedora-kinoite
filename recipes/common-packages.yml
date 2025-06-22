@@ -25,7 +25,7 @@ modules:
       - pim-data-exporter
       - konsole
       - plasma-browser-integration # https://community.kde.org/Plasma/Browser_Integration
-      - partitionmanager # KDE Partition Manager
+      - kde-partitionmanager
       
       # KeePass
       - mono-complete

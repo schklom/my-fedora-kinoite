@@ -13,6 +13,7 @@ modules:
       - xbindkeys # Shortcuts
       - rclone
       - rclone-browser
+      - duf # Better "df"
 
       # Trivalent https://github.com/secureblue/Trivalent (Vanadium for desktop)
       - trivalent

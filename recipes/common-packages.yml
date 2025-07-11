@@ -14,6 +14,7 @@ modules:
       - rclone
       - rclone-browser
       - duf # Better "df"
+      - doublecmd-qt6 # Better file manager, and works with rclone mounts (to test) (https://doublecmd.sourceforge.io/)
 
       # Trivalent https://github.com/secureblue/Trivalent (Vanadium for desktop)
       - trivalent

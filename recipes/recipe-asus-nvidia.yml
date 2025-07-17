@@ -23,3 +23,7 @@ modules:
   - from-file: desktop-dotfiles.yml
   - from-file: usbguard.yml
   - from-file: common-intel-drivers.yml
+
+  - type: rpm-ostree
+    install:
+      - libva-intel-driver # HW video decode support for Intel integrated graphics

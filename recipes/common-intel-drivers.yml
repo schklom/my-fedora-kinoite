@@ -9,3 +9,9 @@ modules:
       - intel-media-driver
       - libva-intel-media-driver
       - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
+      - gstreamer1-vaapi
+      - libva
+      - libva-utils
+      - gstreamer1-vaapi
+      - ffmpeg
+      - mesa-dri-drivers

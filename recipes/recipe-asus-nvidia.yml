@@ -22,3 +22,4 @@ modules:
   - from-file: common-extra-modules.yml
   - from-file: desktop-dotfiles.yml
   - from-file: usbguard.yml
+  - from-file: common-intel-drivers.yml

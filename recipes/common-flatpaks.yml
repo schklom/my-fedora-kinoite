@@ -1,86 +1,83 @@
 # https://blue-build.org/how-to/multiple-files/
 modules:
   - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
-      # If no repo information is specified, Flathub will be used by default
-      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      # repo-name: flathub
-      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
-      install:
-        # - org.mozilla.firefox
-        # - org.gnome.Loupe
-        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
-      # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
-      # only normal flatpak applications are (like Floorp Lightning web browser in this example).
-      # Installing different branches of the same Flatpak is not supported.
-      
-        # Browsers
-        - org.mozilla.firefox
-        - io.github.ungoogled_software.ungoogled_chromium
-        - org.torproject.torbrowser-launcher
-        
-        # Media
-        - org.libreoffice.LibreOffice
-        - org.kde.okular
-        - org.kde.kwrite
-        - org.videolan.VLC
-        - com.stremio.Stremio
-        # - com.obsproject.Studio
-        - com.github.iwalton3.jellyfin-media-player
-        - com.github.iwalton3.jellyfin-mpv-shim
-        - io.mpv.Mpv
-        - org.gnome.Shotwell
-        - org.kde.gwenview
-        # - tv.kodi.Kodi
-        # - org.clementine_player.Clementine
-        # - net.sapples.LiveCaptions
-        # - com.github.marinm.songrec
-        - org.kde.kolourpaint
-        
-        # Network
-        - com.protonvpn.www
-        - org.jdownloader.JDownloader
-        - org.kde.ktorrent
-        - org.kde.krdc
-        - com.rustdesk.RustDesk
-        
-        # Social
-        - org.mozilla.Thunderbird
-        # - eu.betterbird.Betterbird
-        - com.github.IsmaelMartinez.teams_for_linux
-        - org.signal.Signal
-        - com.slack.Slack
-        - com.discordapp.Discord
-        - us.zoom.Zoom
-        
-        # Developer tools
-        - com.vscodium.codium
-        - org.fedoraproject.MediaWriter
-        - org.kde.isoimagewriter
-        
-        # Manage apps
-        # Flatpaks
-        - io.github.flattool.Warehouse
-        # - com.github.tchx84.Flatseal
-        # AppImages
-        - it.mijorus.gearlever
-        # - io.github.prateekmedia.appimagepool
-        
-        # Others
-        # - com.valvesoftware.Steam # Already in Bazzite
-        # - net.lutris.Lutris
-        - com.usebottles.bottles
-        - com.dropbox.Client
-        - org.zotero.Zotero
-        # - org.gnome.OCRFeeder
-        - org.gnome.Calculator
-        - dev.lasheen.qr
-        - org.kde.krename
-        - xyz.xclicker.xclicker
-        - com.nextcloud.desktopclient.nextcloud
-        - org.gnome.Cheese
-        - org.freedesktop.Piper # Mouse configuration
-        
-      # remove:
-      # - org.gnome.eog
+    configurations:
+      - notify: true
+        scope: system
+        install:
+          # - org.mozilla.firefox
+          # - org.gnome.Loupe
+          # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
+          # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
+          # only normal flatpak applications are (like Floorp Lightning web browser in this example).
+          # Installing different branches of the same Flatpak is not supported.
+          
+          # Browsers
+          - org.mozilla.firefox
+          - io.github.ungoogled_software.ungoogled_chromium
+          - org.torproject.torbrowser-launcher
+          
+          # Media
+          - org.libreoffice.LibreOffice
+          - org.kde.okular
+          - org.kde.kwrite
+          - org.videolan.VLC
+          - com.stremio.Stremio
+          # - com.obsproject.Studio
+          - com.github.iwalton3.jellyfin-media-player
+          - com.github.iwalton3.jellyfin-mpv-shim
+          - io.mpv.Mpv
+          - org.gnome.Shotwell
+          - org.kde.gwenview
+          # - tv.kodi.Kodi
+          # - org.clementine_player.Clementine
+          # - net.sapples.LiveCaptions
+          # - com.github.marinm.songrec
+          - org.kde.kolourpaint
+          
+          # Network
+          - com.protonvpn.www
+          - org.jdownloader.JDownloader
+          - org.kde.ktorrent
+          - org.kde.krdc
+          - com.rustdesk.RustDesk
+          
+          # Social
+          - org.mozilla.Thunderbird
+          # - eu.betterbird.Betterbird
+          - com.github.IsmaelMartinez.teams_for_linux
+          - org.signal.Signal
+          - com.slack.Slack
+          - com.discordapp.Discord
+          - us.zoom.Zoom
+          
+          # Developer tools
+          - com.vscodium.codium
+          - org.fedoraproject.MediaWriter
+          - org.kde.isoimagewriter
+          
+          # Manage apps
+          # Flatpaks
+          - io.github.flattool.Warehouse
+          # - com.github.tchx84.Flatseal
+          # AppImages
+          - it.mijorus.gearlever
+          # - io.github.prateekmedia.appimagepool
+          
+          # Others
+          # - com.valvesoftware.Steam # Already in Bazzite
+          # - net.lutris.Lutris
+          - com.usebottles.bottles
+          - com.dropbox.Client
+          - org.zotero.Zotero
+          # - org.gnome.OCRFeeder
+          - org.gnome.Calculator
+          - dev.lasheen.qr
+          - org.kde.krename
+          - xyz.xclicker.xclicker
+          - com.nextcloud.desktopclient.nextcloud
+          - org.gnome.Cheese
+          - org.freedesktop.Piper # Mouse configuration
+          
+        # remove:
+        # - org.gnome.eog

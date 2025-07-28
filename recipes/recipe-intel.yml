@@ -38,3 +38,4 @@ modules:
     remove:
       - ptyxis # ptyxis is so much worse than konsole
       - bazaar
+      - krunner-bazaar

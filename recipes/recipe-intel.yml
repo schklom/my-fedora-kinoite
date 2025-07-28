@@ -34,5 +34,7 @@ modules:
       - python3-pyclip # Copy clipboard to Waydroid
       # Already provided by Bazzite, but just in case I want to go back do ublue
       - waydroid
+      - plasma-discover # For the love of god, why does Bazzite replace great basic packages
     remove:
       - ptyxis # ptyxis is so much worse than konsole
+      - bazaar

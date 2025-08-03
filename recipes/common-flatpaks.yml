@@ -2,7 +2,14 @@
 modules:
   - type: default-flatpaks
     configurations:
+      - scope: user
+        repo:
+          # you can override the title to make inclusion of both system and user repos clearer
+          title: Flathub (user)
+      
       - notify: true
+        repo:
+          title: Flathub (system)
         scope: system
         install:
           # - org.mozilla.firefox

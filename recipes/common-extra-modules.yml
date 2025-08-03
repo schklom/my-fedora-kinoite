@@ -9,11 +9,17 @@ modules:
   - type: script
     snippets:
       # the ledger repo is a submodule
-      - "cd /tmp/files/LedgerHQ_udev-rules_repo && pwd && ls -ahl && git submodule update --init --recursive"
+      - "git clone https://github.com/LedgerHQ/udev-rules /tmp/files/LedgerHQ_udev-rules_repo"
 
-  - type: files
-    files:
-      - source: LedgerHQ_udev-rules_repo
-        destination: /etc/udev/rules.d/
+  # ledger udev rules
+  - type: script
+    snippets:
+      # the ledger repo is a submodule
+      - "cd /tmp/files/LedgerHQ_udev-rules_repo && pwd && ls -ahl"
+
+#  - type: files
+#    files:
+#      - source: LedgerHQ_udev-rules_repo
+#        destination: /etc/udev/rules.d/
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

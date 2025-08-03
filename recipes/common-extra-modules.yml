@@ -8,6 +8,7 @@ modules:
   # ledger udev rules
   - type: script
     snippets:
+      - "cd /tmp/files/LedgerHQ_udev-rules_repo"
       - "pwd"
       - "ls -ahl"
       # the ledger repo is a submodule

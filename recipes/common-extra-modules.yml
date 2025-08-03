@@ -5,4 +5,10 @@ modules:
       - source: root
         destination: /
 
+  # ledger udev rules
+  - type: files
+    files:
+      - source: LedgerHQ_udev-rules_repo/20-hw1.rules
+        destination: /etc/udev/rules.d/20-hw1.rules
+
   - type: signing # this sets up the proper policy & signing files for signed images to work f

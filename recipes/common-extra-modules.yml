@@ -1,8 +1,13 @@
 # https://blue-build.org/how-to/multiple-files/
 modules:
-  - type: signing # this sets up the proper policy & signing files for signed images to work f
-
   - type: files
     files:
       - source: root
         destination: /
+
+  # https://support.ledger.com/article/4404389606417-zd
+  - type: script
+    snippets:
+      - "wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | bash"
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work f

@@ -9,7 +9,7 @@ modules:
     user:
       enabled:
         - usbguard-notifier.service
-  
+
   # https://blue-build.org/reference/modules/script/
   - type: script
     snippets:

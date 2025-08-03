@@ -6,6 +6,12 @@ modules:
         destination: /
 
   # ledger udev rules
+  - type: script
+    snippets:
+      - "pwd"
+      - "ls -ahl"
+      # the ledger repo is a submodule
+      - "git submodule update --init --recursive"
   - type: files
     files:
       - source: LedgerHQ_udev-rules_repo

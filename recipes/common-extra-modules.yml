@@ -5,17 +5,17 @@ modules:
       - source: root
         destination: /
 
-  # ledger udev rules
-  - type: script
-    snippets:
-      # the ledger repo is a submodule
-      - "git clone https://github.com/LedgerHQ/udev-rules /tmp/files/LedgerHQ_udev-rules_repo"
+#  # ledger udev rules
+#  - type: script
+#    snippets:
+#      # the ledger repo is a submodule
+#      - "git clone https://github.com/LedgerHQ/udev-rules /tmp/files/LedgerHQ_udev-rules_repo"
 
-  # ledger udev rules
-  - type: script
-    snippets:
-      # the ledger repo is a submodule
-      - "cd /tmp/files/LedgerHQ_udev-rules_repo && pwd && ls -ahl"
+#  # ledger udev rules
+#  - type: script
+#    snippets:
+#      # the ledger repo is a submodule
+#      - "cd /tmp/files/LedgerHQ_udev-rules_repo && pwd && ls -ahl"
 
 #  - type: files
 #    files:

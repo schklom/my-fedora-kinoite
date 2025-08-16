@@ -27,3 +27,8 @@ modules:
   - type: rpm-ostree
     install:
       - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
+
+  - type: files
+    files:
+      - source: root_laptop
+        destination: /

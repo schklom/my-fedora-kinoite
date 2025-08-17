@@ -5,11 +5,12 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 # https://github.com/orgs/ublue-os/packages
-# base-image: ghcr.io/ublue-os/kinoite-main
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: latest
 # https://github.com/secureblue/secureblue
 # base-image: ghcr.io/secureblue/kinoite-main-userns-hardened
-base-image: ghcr.io/ublue-os/bazzite
-image-version: stable # 40, or latest is also supported if you want new updates ASAP
+# base-image: ghcr.io/ublue-os/bazzite
+# image-version: stable # 40, or latest is also supported if you want new updates ASAP
 
 # https://blue-build.org/learn/getting-started/
 modules:
@@ -30,14 +31,15 @@ modules:
   - type: rpm-ostree
     install:
       - weston # To run Waydroid on X11 using Wayland emulator (weston)
-      # - adwaita-cursor-theme # Needed for weston (not actually needed, or eve useful)
+      # - adwaita-cursor-theme # Needed for weston (not actually needed, or even useful)
       - python3-pyclip # Copy clipboard to Waydroid
-      # Already provided by Bazzite, but just in case I want to go back do ublue
+      # Already provided by Bazzite, but just in case I want to go back to ublue
       - waydroid
-      - plasma-discover # For the love of god, why does Bazzite replace great basic packages
-      - PackageKit # needed for discover
-      # - plasma-discover-packagekit # needed for discover
-    remove:
-      - ptyxis # ptyxis is so much worse than konsole
-      - bazaar
-      - krunner-bazaar
+      ## Undo Bazzite bullshit
+      #- plasma-discover # For the love of god, why does Bazzite replace great basic packages
+      #- PackageKit # needed for discover
+      ## - plasma-discover-packagekit # needed for discover
+    #remove:
+      #- ptyxis # ptyxis is so much worse than konsole
+      #- bazaar
+      #- krunner-bazaar

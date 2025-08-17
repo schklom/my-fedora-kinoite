@@ -36,7 +36,7 @@ modules:
       - waydroid
       - plasma-discover # For the love of god, why does Bazzite replace great basic packages
       - PackageKit # needed for discover
-      - plasma-discover-packagekit # needed for discover
+      # - plasma-discover-packagekit # needed for discover
     remove:
       - ptyxis # ptyxis is so much worse than konsole
       - bazaar

@@ -1,5 +1,10 @@
 modules:
   - type: rpm-ostree
+    remove:
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
+
+  - type: rpm-ostree
     install:
       - plasma-discover # For the love of god, why does Bazzite replace great basic packages
       - PackageKit # needed for discover

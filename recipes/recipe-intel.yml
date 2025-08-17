@@ -14,9 +14,8 @@ image-version: latest
 
 # https://blue-build.org/learn/getting-started/
 modules:
-
-  - from-file: common-repos.yml
   # - from-file: undo-bazzite-crap.yml
+  - from-file: common-repos.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
   - from-file: common-systemd.yml

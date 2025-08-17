@@ -14,12 +14,9 @@ image-version: latest
 
 # https://blue-build.org/learn/getting-started/
 modules:
-  - type: rpm-ostree
-    remove:
-      - rpmfusion-free-release
-      - rpmfusion-nonfree-release
 
   - from-file: common-repos.yml
+  # - from-file: undo-bazzite-crap.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
   - from-file: common-systemd.yml
@@ -27,7 +24,7 @@ modules:
   - from-file: desktop-dotfiles.yml
   - from-file: usbguard.yml
   - from-file: common-intel-drivers.yml
-
+  
   - type: rpm-ostree
     install:
       - weston # To run Waydroid on X11 using Wayland emulator (weston)
@@ -35,11 +32,3 @@ modules:
       - python3-pyclip # Copy clipboard to Waydroid
       # Already provided by Bazzite, but just in case I want to go back to ublue
       - waydroid
-      ## Undo Bazzite bullshit
-      #- plasma-discover # For the love of god, why does Bazzite replace great basic packages
-      #- PackageKit # needed for discover
-      ## - plasma-discover-packagekit # needed for discover
-    #remove:
-      #- ptyxis # ptyxis is so much worse than konsole
-      #- bazaar
-      #- krunner-bazaar

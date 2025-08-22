@@ -37,6 +37,11 @@ modules:
       - https://download1.rpmfusion.org/free/fedora/releases/%OS_VERSION%/Everything/x86_64/os/Packages/r/rpmfusion-free-release-tainted-%OS_VERSION%-1.noarch.rpm
       # - rpmfusion-free-release-tainted ONLY WORKS ON BAZZITE
 
+  # RPMSPHERE for veracrypt
+  - type: rpm-ostree
+    repos:
+      - https://rpmsphere.github.io/rpmsphere.repo
+
   # Secureblue (to install Trivalent https://github.com/secureblue/Trivalent = Vanadium for desktop)
   - type: rpm-ostree
     repos:

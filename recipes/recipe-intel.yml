@@ -31,3 +31,4 @@ modules:
       - python3-pyclip # Copy clipboard to Waydroid
       # Already provided by Bazzite, but just in case I want to go back to ublue
       - waydroid
+      - veracrypt

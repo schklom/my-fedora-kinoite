@@ -1,0 +1,20 @@
+# https://github.com/winapps-org/winapps
+modules:
+  - type: rpm-ostree
+    install:
+      - curl
+      - dialog
+      - freerdp
+      - git
+      - iproute
+      - libnotify
+      - nmap-ncat
+
+  - type: default-flatpaks
+    configurations:
+      - notify: false
+        repo:
+          title: Flathub (system)
+        scope: system
+        install:
+          - com.freerdp.FreeRDP

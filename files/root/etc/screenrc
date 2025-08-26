@@ -1,5 +1,0 @@
-# Disable the alternate screen buffer to allow Konsole's scrollbar to function
-termcapinfo xterm* ti@:te@
-
-# Increase the default scrollback buffer size to 10,000 lines
-defscrollback 10000

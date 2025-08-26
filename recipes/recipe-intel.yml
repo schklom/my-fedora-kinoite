@@ -32,4 +32,9 @@ modules:
       # Already provided by Bazzite, but just in case I want to go back to ublue
       - waydroid
       - veracrypt
-      - amarok # iTunes replacement
+
+  - type: default-flatpaks
+    configurations:
+      - scope: system
+        install:
+          - org.kde.amarok # iTunes replacement

@@ -26,12 +26,22 @@ modules:
   
   - type: rpm-ostree
     install:
+      # Android apps
       - weston # To run Waydroid on X11 using Wayland emulator (weston)
       # - adwaita-cursor-theme # Needed for weston (not actually needed, or even useful)
       - python3-pyclip # Copy clipboard to Waydroid
       # Already provided by Bazzite, but just in case I want to go back to ublue
       - waydroid
+      
       - veracrypt
+
+      # Mouse configuration (https://github.com/libratbag/piper/wiki/Installation)
+      - libratbag-ratbagd
+      
+      # Run VMs
+      - libvirt
+      - qemu
+      - virt-manager
 
   - type: default-flatpaks
     configurations:

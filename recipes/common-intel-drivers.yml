@@ -1,13 +1,13 @@
 modules:
   # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
   - type: dnf
-    packages:
+    remove:
+      packages:
       # Need to remove this first otherwise it conflicts with intel-media-driver
-      remove:
         - libva-intel-media-driver
   - type: dnf
-    packages:
-      install:
+    install:
+      packages:
         - intel-media-driver
         - libva-intel-media-driver
         - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top

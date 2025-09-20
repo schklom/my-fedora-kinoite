@@ -1,14 +1,15 @@
 # https://github.com/winapps-org/winapps
 modules:
-  - type: rpm-ostree
-    install:
-      - curl
-      - dialog
-      - freerdp
-      - git
-      - iproute
-      - libnotify
-      - nmap-ncat
+  - type: dnf
+    packages:
+      install:
+        - curl
+        - dialog
+        - freerdp
+        - git
+        - iproute
+        - libnotify
+        - nmap-ncat
 
   - type: default-flatpaks
     configurations:

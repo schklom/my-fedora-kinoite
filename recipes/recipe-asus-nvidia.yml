@@ -25,8 +25,8 @@ modules:
   - from-file: common-intel-drivers.yml
 
   - type: dnf
-    packages:
-      install:
+    install:
+      packages:
         - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
 
   - type: files

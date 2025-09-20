@@ -69,8 +69,8 @@ modules:
   # Needed to install mozilla-openh264
   # Thanks to https://discussion.fedoraproject.org/t/fedora-cisco-openh264-repo-does-not-work/100570/10
   - type: dnf
-    cleanup: true # clean up added repos after module is done
     repos:
+      cleanup: true # clean up added repos after module is done
       nonfree: negativo17
     install:
       packages:

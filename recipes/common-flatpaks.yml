@@ -21,7 +21,7 @@ modules:
           
           # Browsers
           - org.mozilla.firefox
-          - io.github.ungoogled_software.ungoogled_chromium
+          # - io.github.ungoogled_software.ungoogled_chromium
           - org.torproject.torbrowser-launcher
           
           # Media

@@ -24,9 +24,10 @@ modules:
   - from-file: usbguard.yml
   - from-file: common-intel-drivers.yml
 
-  - type: rpm-ostree
-    install:
-      - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
+  - type: dnf
+    packages:
+      install:
+        - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
 
   - type: files
     files:

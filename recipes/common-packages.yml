@@ -55,7 +55,6 @@ modules:
         # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)
         - gstreamer1-plugin-openh264
         - openh264
-        - mozilla-openh264
         - ffmpeg
         # - ffmpeg-free # free or not, can't have both
   
@@ -65,3 +64,14 @@ modules:
     remove:
       packages:
         - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872
+
+    
+  # Needed to install mozilla-openh264
+  # Thanks to https://discussion.fedoraproject.org/t/fedora-cisco-openh264-repo-does-not-work/100570/10
+  - type: dnf
+    cleanup: true # clean up added repos after module is done
+    repos:
+      nonfree: negativo17
+    install:
+      packages:
+        - mozilla-openh264

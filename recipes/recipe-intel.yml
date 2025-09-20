@@ -15,6 +15,7 @@ image-version: latest
 # https://blue-build.org/learn/getting-started/
 modules:
   # - from-file: undo-bazzite-crap.yml
+  - from-file: common-mozilla.yaml
   - from-file: common-repos.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml

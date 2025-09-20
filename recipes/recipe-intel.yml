@@ -25,8 +25,8 @@ modules:
   - from-file: common-intel-drivers.yml
   
   - type: dnf
-    packages:
-      install:
+    install:
+      packages:
         # Android apps
         - weston # To run Waydroid on X11 using Wayland emulator (weston)
         # - adwaita-cursor-theme # Needed for weston (not actually needed, or even useful)

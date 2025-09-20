@@ -1,8 +1,9 @@
 modules:
-  - type: rpm-ostree
-    install:
-      - usbguard # Protect against unknown USB devices, already in secureblue
-      - usbguard-notifier
+  - type: dnf
+    packages:
+      install:
+        - usbguard # Protect against unknown USB devices, already in secureblue
+        - usbguard-notifier
 
   # https://blue-build.org/reference/modules/systemd/
   - type: systemd

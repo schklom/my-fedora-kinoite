@@ -7,7 +7,7 @@ modules:
   # Needed to install mozilla-openh264
   # Thanks to https://discussion.fedoraproject.org/t/fedora-cisco-openh264-repo-does-not-work/100570/10
     repos:
-      cleanup: true # clean up added repos after module is done
+      # cleanup: true # clean up added repos after module is done
       nonfree: rpmfusion
     install:
       packages:

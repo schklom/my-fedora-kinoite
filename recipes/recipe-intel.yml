@@ -34,8 +34,6 @@ modules:
         - python3-pyclip # Copy clipboard to Waydroid
         # Already provided by Bazzite, but just in case I want to go back to ublue
         - waydroid
-        
-        - veracrypt
   
         # Mouse configuration (https://github.com/libratbag/piper/wiki/Installation)
         - libratbag-ratbagd
@@ -44,6 +42,16 @@ modules:
         - libvirt
         - qemu
         - virt-manager
+
+  # RPMSPHERE for veracrypt
+  - type: dnf
+    repos:
+      cleanup: true # clean up added repos after module is done
+      files:
+        - https://rpmsphere.github.io/rpmsphere.repo
+    install:
+      packages:
+        - veracrypt
 
   - type: default-flatpaks
     configurations:

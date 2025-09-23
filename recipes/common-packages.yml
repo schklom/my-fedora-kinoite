@@ -41,6 +41,7 @@ modules:
         #- rpmfusion-free-release-tainted
         - libdvdcss
         - gwenview # It often fails to open files as a flatpak
+        - libgpod # Amarok to discover iPods natively
   
         # Text to speech
         - espeak-ng

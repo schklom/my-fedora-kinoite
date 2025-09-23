@@ -17,9 +17,6 @@ modules:
         - duf # Better "df"
         # - doublecmd-qt6 # Better file manager, and works with rclone mounts (to test) (https://doublecmd.sourceforge.io/)
         - chkrootkit
-  
-        # Trivalent https://github.com/secureblue/Trivalent (Vanadium for desktop)
-        - trivalent
         
         # KDE
         - kdepim-addons # For the Event Calendar widget, to work with external calendars
@@ -61,3 +58,15 @@ modules:
         # Backup
         - btrfs-assistant # (pre-installed on Bazzite)
 
+  # Secureblue (to install Trivalent https://github.com/secureblue/Trivalent = Vanadium for desktop)
+  - type: dnf
+    repos:
+      cleanup: true # clean up added repos after module is done
+      files:
+        - https://repo.secureblue.dev/secureblue.repo
+      keys:
+        - https://repo.secureblue.dev/secureblue.gpg
+    install:
+      packages:
+        # Trivalent https://github.com/secureblue/Trivalent (Vanadium for desktop)
+        - trivalent

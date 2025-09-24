@@ -55,6 +55,10 @@ modules:
         - openh264
         - x264-libs # needed dependency with dnf for ffmpeg
         - x265-libs # needed dependency with dnf for ffmpeg
+        - libavformat # needed dependency with dnf for ffmpeg
+        - libavcodec # needed dependency with dnf for ffmpeg
+        - libavutil # needed dependency with dnf for ffmpeg
+        - libswresample # needed dependency with dnf for ffmpeg
         - ffmpeg
         # - ffmpeg-free # free or not, can't have both
   

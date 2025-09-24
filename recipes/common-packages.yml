@@ -52,6 +52,8 @@ modules:
         # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)
         - gstreamer1-plugin-openh264
         - openh264
+        - x264-libs # needed with fnd for ffmpeg
+        - x265-libs # needed with fnd for ffmpeg
         - ffmpeg
         # - ffmpeg-free # free or not, can't have both
   

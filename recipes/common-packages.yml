@@ -6,6 +6,18 @@ modules:
     install:
       allow-erasing: true
       packages:
+        - qt6-qtwebengine # needed dependency with dnf for kdepim-addons
+        - libavformat # needed dependency with dnf for ffmpeg
+        - libavcodec # needed dependency with dnf for ffmpeg
+        - libavutil # needed dependency with dnf for ffmpeg
+        - libswresample # needed dependency with dnf for ffmpeg
+        - libswscale # needed dependency with dnf for ffmpeg
+
+  - type: dnf
+    #repos:
+      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+    install:
+      packages:
         # - micro
         # - starship
         - distrobox # run any os in containers easily
@@ -20,7 +32,6 @@ modules:
         - chkrootkit
         
         # KDE
-        - qt6-qtwebengine # needed dependency with dnf for kdepim-addons
         - kdepim-addons # For the Event Calendar widget, to work with external calendars
         - kde-connect
         - kdeconnectd
@@ -54,11 +65,6 @@ modules:
         # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)
         - gstreamer1-plugin-openh264
         - openh264
-        - libavformat # needed dependency with dnf for ffmpeg
-        - libavcodec # needed dependency with dnf for ffmpeg
-        - libavutil # needed dependency with dnf for ffmpeg
-        - libswresample # needed dependency with dnf for ffmpeg
-        - libswscale # needed dependency with dnf for ffmpeg
         - ffmpeg
         # - ffmpeg-free # free or not, can't have both
   

@@ -1,18 +1,17 @@
 modules:
   # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
-  - type: dnf
+  - type: rpm-ostree
+    # Need to remove this first otherwise it conflicts with intel-media-driver
     remove:
-      packages:
-      # Need to remove this first otherwise it conflicts with intel-media-driver
-        - libva-intel-media-driver
-  - type: dnf
+      - libva-intel-media-driver
+  - type: rpm-ostree
     install:
-      packages:
-        - intel-media-driver
-        - libva-intel-media-driver
-        - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
-        - gstreamer1-vaapi
-        - libva
-        - libva-utils
-        - gstreamer1-vaapi
-        - mesa-dri-drivers
+      - intel-media-driver
+      - libva-intel-media-driver
+      - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
+      - gstreamer1-vaapi
+      - libva
+      - libva-utils
+      - gstreamer1-vaapi
+      # - ffmpeg
+      - mesa-dri-drivers

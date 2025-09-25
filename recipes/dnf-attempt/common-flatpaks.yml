@@ -3,11 +3,10 @@ modules:
   - type: default-flatpaks
     configurations:
       - scope: user
-        notify: false
         repo:
           # you can override the title to make inclusion of both system and user repos clearer
           title: Flathub (user)
-
+      
       - notify: false
         repo:
           title: Flathub (system)
@@ -86,3 +85,6 @@ modules:
           - com.nextcloud.desktopclient.nextcloud
           - org.gnome.Cheese
           - org.freedesktop.Piper # Mouse configuration
+          
+        # remove:
+        # - org.gnome.eog

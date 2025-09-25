@@ -1,72 +1,70 @@
-# https://blue-build.org/how-to/multiple-files/
 modules:
-  - type: dnf
-    #repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+  - type: rpm-ostree
     install:
-      packages:
-        # - micro
-        # - starship
-        - distrobox # run any os in containers easily
-        - htop # Better "top"
-        - podman-compose # Use docker.compose.yml files with podman
-        - plasma-workspace-x11 # Fedora decided to remove X11, so I have to add it back
-        - xbindkeys # Shortcuts
-        - rclone
-        - rclone-browser
-        - duf # Better "df"
-        # - doublecmd-qt6 # Better file manager, and works with rclone mounts (to test) (https://doublecmd.sourceforge.io/)
-        - chkrootkit
-        
-        # KDE
-        - kdepim-addons # For the Event Calendar widget, to work with external calendars
-        - kde-connect
-        - kdeconnectd
-        - kontact # Calendar + Contact + Task manager. If installed via Flatpak, it will not work with Event Calendar.
-        - pim-data-exporter
-        - konsole
-        - plasma-browser-integration # https://community.kde.org/Plasma/Browser_Integration
-        - kde-partitionmanager
-        - plasma-discover # Discover
-        - PackageKit # needed for discover
-        - network-manager-applet # To customize MAC address randomization with a GUI
-        
-        # KeePass
-        - mono-complete
-        - xdotool
-        - xinput
-  
-        # Media
-        # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
-        - libdvdcss # REGISTRY rpmfusion-free-release-tainted
-        - gwenview # It often fails to open files as a flatpak
-        - libgpod # Amarok to discover iPods natively
-  
-        # Text to speech
-        - espeak-ng
-        - xsel
-  
-        # Beep
-        # - beep
-  
-        # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)
-        - gstreamer1-plugin-openh264
-        - openh264
-        # - ffmpeg
-        - ffmpeg-free # free or not, can't have both
-  
-        # Backup
-        - btrfs-assistant # (pre-installed on Bazzite)
+      - distrobox # run any os in containers easily
+      - htop # Better "top"
+      - podman-compose # Use docker.compose.yml files with podman
+      - plasma-workspace-x11 # Fedora decided to remove X11, so I have to add it back
+      - xbindkeys # Shortcuts
+      - rclone
+      - rclone-browser
+      - duf # Better "df"
+      # - doublecmd-qt6 # Better file manager, and works with rclone mounts (to test) (https://doublecmd.sourceforge.io/)
+      - chkrootkit
 
-  # Secureblue (to install Trivalent https://github.com/secureblue/Trivalent = Vanadium for desktop)
-  - type: dnf
-    repos:
-      cleanup: true # clean up added repos after module is done
-      files:
-        - https://repo.secureblue.dev/secureblue.repo
-      keys:
-        - https://repo.secureblue.dev/secureblue.gpg
+      # Trivalent https://github.com/secureblue/Trivalent (Vanadium for desktop)
+      - trivalent
+
+      # KDE
+      - kdepim-addons # For the Event Calendar widget, to work with external calendars
+      - kde-connect
+      - kdeconnectd
+      - kontact # Calendar + Contact + Task manager. If installed via Flatpak, it will not work with Event Calendar.
+      - pim-data-exporter
+      - konsole
+      - plasma-browser-integration # https://community.kde.org/Plasma/Browser_Integration
+      - kde-partitionmanager
+      - plasma-discover # Discover
+      - PackageKit # needed for discover
+      - network-manager-applet # To customize MAC address randomization with a GUI
+
+      # KeePass
+      - mono-complete
+      - xdotool
+      - xinput
+
+      # Media
+      # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
+      #- rpmfusion-free-release-tainted
+      - libdvdcss
+      - gwenview # It often fails to open files as a flatpak
+
+      # Text to speech
+      - espeak-ng
+      - xsel
+
+      # Beep
+      # - beep
+
+      # Backup
+      - btrfs-assistant # (pre-installed on Bazzite)
+
+    remove:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+# Mozilla/Cisco openh264
+modules:
+  - type: rpm-ostree
     install:
-      packages:
-        # Trivalent https://github.com/secureblue/Trivalent (Vanadium for desktop)
-        - trivalent
+      # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)
+      - gstreamer1-plugin-openh264
+      - openh264
+      - mozilla-openh264
+      - ffmpeg
+      # - ffmpeg-free # free or not, can't have both
+
+    remove:
+      - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872

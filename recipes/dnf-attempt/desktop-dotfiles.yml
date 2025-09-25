@@ -1,0 +1,10 @@
+modules:
+  # https://blue-build.org/reference/modules/chezmoi
+  - type: chezmoi
+    repository: "git@github.com:schklom/my-dotfiles-KDE.git"
+    # Enable per user with
+    # systemctl enable --user chezmoi-init.service chezmoi-update.timer
+    all-users: false # default true
+    file-conflict-policy: replace # default skip
+    # run-every: # default 1d
+    # wait-after-boot: # default 5m

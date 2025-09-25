@@ -1,18 +1,15 @@
 modules:
-  - type: dnf
+  - type: rpm-ostree
     remove:
-      packages:
-        - rpmfusion-free-release
-        - rpmfusion-nonfree-release
+      - rpmfusion-free-release
+      - rpmfusion-nonfree-release
 
-  - type: dnf
+  - type: rpm-ostree
     install:
-      packages:
-        - plasma-discover # For the love of god, why does Bazzite replace great basic packages
-        - PackageKit # needed for discover
-        # - plasma-discover-packagekit # maybe needed for Discover? Seems to cause a bug and prevent Discover from opening
+      - plasma-discover # For the love of god, why does Bazzite replace great basic packages
+      - PackageKit # needed for discover
+      # - plasma-discover-packagekit # maybe needed for Discover? Seems to cause a bug and prevent Discover from opening
     remove:
-      packages:
-        - ptyxis # ptyxis is so much worse than konsole
-        - bazaar
-        - krunner-bazaar
+      - ptyxis # ptyxis is so much worse than konsole
+      - bazaar
+      - krunner-bazaar

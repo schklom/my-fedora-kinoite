@@ -1,0 +1,25 @@
+# https://blue-build.org/how-to/multiple-files/
+modules:
+  - type: files
+    files:
+      - source: root
+        destination: /
+
+#  # ledger udev rules
+#  - type: script
+#    snippets:
+#      # the ledger repo is a submodule
+#      - "git clone https://github.com/LedgerHQ/udev-rules /tmp/files/LedgerHQ_udev-rules_repo"
+
+#  # ledger udev rules
+#  - type: script
+#    snippets:
+#      # the ledger repo is a submodule
+#      - "cd /tmp/files/LedgerHQ_udev-rules_repo && pwd && ls -ahl"
+
+#  - type: files
+#    files:
+#      - source: LedgerHQ_udev-rules_repo
+#        destination: /etc/udev/rules.d/
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully

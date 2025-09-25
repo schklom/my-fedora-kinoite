@@ -15,6 +15,7 @@ image-version: latest
 # https://blue-build.org/learn/getting-started/
 modules:
   # - from-file: undo-bazzite-crap.yml
+  - from-file: common-mozilla.yaml
   - from-file: common-repos.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
@@ -23,30 +24,31 @@ modules:
   - from-file: desktop-dotfiles.yml
   - from-file: usbguard.yml
   - from-file: common-intel-drivers.yml
-
-  - type: rpm-ostree
+  
+  - type: dnf
     install:
-      # Android apps
-      - weston # To run Waydroid on X11 using Wayland emulator (weston)
-      # - adwaita-cursor-theme # Needed for weston (not actually needed, or even useful)
-      - python3-pyclip # Copy clipboard to Waydroid
-      - waydroid # Already provided by Bazzite, but just in case I want to go back to ublue
-
-      # Mouse configuration (https://github.com/libratbag/piper/wiki/Installation)
-      - libratbag-ratbagd
-
-      # Run VMs
-      - libvirt
-      - qemu
-      - virt-manager
-
-      # Lets Amarok discover iPods natively
-      - libgpod
+      packages:
+        # Android apps
+        - weston # To run Waydroid on X11 using Wayland emulator (weston)
+        # - adwaita-cursor-theme # Needed for weston (not actually needed, or even useful)
+        - python3-pyclip # Copy clipboard to Waydroid
+        # Already provided by Bazzite, but just in case I want to go back to ublue
+        - waydroid
+  
+        # Mouse configuration (https://github.com/libratbag/piper/wiki/Installation)
+        - libratbag-ratbagd
+        
+        # Run VMs
+        - libvirt
+        - qemu
+        - virt-manager
 
   # RPMSPHERE for veracrypt
-  - type: rpm-ostree
+  - type: dnf
     repos:
-      - https://rpmsphere.github.io/rpmsphere.repo
+      cleanup: true # clean up added repos after module is done
+      files:
+        - https://rpmsphere.github.io/rpmsphere.repo
     install:
       packages:
         - veracrypt

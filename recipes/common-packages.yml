@@ -55,7 +55,7 @@ modules:
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-# Mozilla/Cisco openh264
+  # Mozilla/Cisco openh264
   - type: rpm-ostree
     install:
       # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)

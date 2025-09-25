@@ -40,10 +40,9 @@ modules:
   # Secureblue (to install Trivalent https://github.com/secureblue/Trivalent = Vanadium for desktop)
   - type: rpm-ostree
     repos:
-      files:
-        - https://repo.secureblue.dev/secureblue.repo
-      keys:
-        - https://repo.secureblue.dev/secureblue.gpg
+      - https://repo.secureblue.dev/secureblue.repo
+    keys:
+      - https://repo.secureblue.dev/secureblue.gpg
   
   # Needed to install mozilla-openh264
   # Thanks to https://discussion.fedoraproject.org/t/fedora-cisco-openh264-repo-does-not-work/100570/10

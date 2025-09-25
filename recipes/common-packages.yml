@@ -1,26 +1,5 @@
 # https://blue-build.org/how-to/multiple-files/
 modules:
-  - type: dnf
-    #repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-    remove:
-      packages:
-        - libavformat-free # needed dependency with dnf for ffmpeg
-        - libavcodec-free # needed dependency with dnf for ffmpeg
-        - libavutil-free # needed dependency with dnf for ffmpeg
-        - libswresample-free # needed dependency with dnf for ffmpeg
-        - libswscale-free # needed dependency with dnf for ffmpeg
-
-  - type: dnf
-    #repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-    install:
-      packages:
-        # - libavformat # needed dependency with dnf for ffmpeg
-        # - libavcodec # needed dependency with dnf for ffmpeg
-        - libavutil # needed dependency with dnf for ffmpeg
-        - libswresample # needed dependency with dnf for ffmpeg
-        - libswscale # needed dependency with dnf for ffmpeg
 
   - type: dnf
     #repos:
@@ -81,8 +60,8 @@ modules:
         # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)
         - gstreamer1-plugin-openh264
         - openh264
-        - ffmpeg
-        # - ffmpeg-free # free or not, can't have both
+        # - ffmpeg
+        - ffmpeg-free # free or not, can't have both
   
         # Backup
         - btrfs-assistant # (pre-installed on Bazzite)

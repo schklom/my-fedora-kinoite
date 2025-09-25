@@ -48,8 +48,7 @@ modules:
     repos:
       - https://rpmsphere.github.io/rpmsphere.repo
     install:
-      packages:
-        - veracrypt
+      - veracrypt
 
   - type: default-flatpaks
     configurations:

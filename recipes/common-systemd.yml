@@ -4,3 +4,4 @@ modules:
       enabled:
         #- flatpak-automatic.service
         - setup-grub.service
+        - systemd-timesyncd.service

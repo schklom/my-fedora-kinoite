@@ -35,8 +35,7 @@ modules:
 
       # Media
       # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
-      #- rpmfusion-free-release-tainted
-      - libdvdcss
+      - libdvdcss # From repository rpmfusion-free-release-tainted
       - gwenview # It often fails to open files as a flatpak
 
       # Text to speech

@@ -42,6 +42,8 @@ modules:
 
       # Lets Amarok discover iPods natively
       - libgpod
+      - libmtp
+      - kio_mtp
 
   # RPMSPHERE for veracrypt
   - type: rpm-ostree

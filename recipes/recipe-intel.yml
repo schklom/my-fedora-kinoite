@@ -41,7 +41,7 @@ modules:
       - virt-manager
 
       # Lets Amarok discover iPods natively
-      - org.kde.amarok
+      - amarok
       - libgpod
       - libmtp
       - kio_mtp

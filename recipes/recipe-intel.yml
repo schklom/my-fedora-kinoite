@@ -41,6 +41,7 @@ modules:
       - virt-manager
 
       # Lets Amarok discover iPods natively
+      - org.kde.amarok
       - libgpod
       - libmtp
       - kio_mtp
@@ -52,8 +53,8 @@ modules:
     install:
       - veracrypt
 
-  - type: default-flatpaks
-    configurations:
-      - scope: system
-        install:
-          - org.kde.amarok # iTunes replacement
+#  - type: default-flatpaks
+#    configurations:
+#      - scope: system
+#        install:
+#          - org.kde.amarok # iTunes replacement

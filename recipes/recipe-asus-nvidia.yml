@@ -33,14 +33,15 @@ modules:
   - from-file: desktop-dotfiles.yml
   - from-file: usbguard.yml
   - from-file: common-intel-drivers.yml
-      
+
   - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/lukenukem/asus-linux/repo/fedora-%OS_VERSION%/lukenukem/asus-linux-fedora-%OS_VERSION%.repo
     install:
       # - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
       # https://github.com/ublue-os/hwe/blob/main/nvidia-install.sh
       - asusctl
       - asusctl-rog-gui
-      - fprintd
       - supergfxctl-plasmoid
       - supergfxctl
 

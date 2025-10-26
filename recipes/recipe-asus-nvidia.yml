@@ -34,9 +34,15 @@ modules:
   - from-file: usbguard.yml
   - from-file: common-intel-drivers.yml
       
-#  - type: rpm-ostree
-#    install:
-#      - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
+  - type: rpm-ostree
+    install:
+      # - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
+      # https://github.com/ublue-os/hwe/blob/main/nvidia-install.sh
+      - asusctl
+      - asusctl-rog-gui
+      - fprintd
+      - supergfxctl-plasmoid
+      - supergfxctl
 
   - type: files
     files:

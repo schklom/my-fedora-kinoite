@@ -50,6 +50,12 @@ modules:
     install:
       # https://github.com/ublue-os/hwe/blob/main/nvidia-install.sh
       - supergfxctl-plasmoid
+  
+  - type: systemd
+    system:
+      enabled:
+        - asusd.service
+        - supergfxd.service
 
   - type: files
     files:

@@ -36,7 +36,7 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/lukenukem/asus-linux/repo/fedora-%OS_VERSION%/lukenukem/asus-linux-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/lukenukem/asus-linux/repo/fedora-%OS_VERSION%/lukenukem-asus-linux-fedora-%OS_VERSION%.repo
     install:
       # - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
       # https://github.com/ublue-os/hwe/blob/main/nvidia-install.sh
@@ -46,7 +46,7 @@ modules:
   # Found repo from kinoite-asus-nvidia via "rpm -qi supergfxctl-plasmoid"
   - type: rpm-ostree
     repos:
-      - https://copr.fedorainfracloud.org/coprs/jhyub/supergfxctl-plasmoid/repo/fedora-%OS_VERSION%/jhyub/supergfxctl-plasmoid-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/jhyub/supergfxctl-plasmoid/repo/fedora-%OS_VERSION%/jhyub-supergfxctl-plasmoid-fedora-%OS_VERSION%.repo
     install:
       # https://github.com/ublue-os/hwe/blob/main/nvidia-install.sh
       - supergfxctl-plasmoid

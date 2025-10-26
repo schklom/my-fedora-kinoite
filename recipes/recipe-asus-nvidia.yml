@@ -32,11 +32,29 @@ modules:
   - from-file: common-extra-modules.yml
   - from-file: desktop-dotfiles.yml
   - from-file: usbguard.yml
-  - from-file: common-intel-drivers.yml
+  #- from-file: common-intel-drivers.yml
 
+  # Hardware acceleration with Intel (c.f. https://wiki.archlinux.org/title/Hardware_video_acceleration)
+  - type: rpm-ostree
+    # Need to remove this first otherwise it conflicts with intel-media-driver
+    remove:
+      - libva-intel-media-driver
   - type: rpm-ostree
     install:
-        - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
+      - intel-media-driver
+      - libva-intel-media-driver
+      - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
+      - gstreamer1-vaapi
+      - libva
+      - libva-utils
+      - gstreamer1-vaapi
+      # - ffmpeg
+      - mesa-dri-drivers
+      - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
+      
+#  - type: rpm-ostree
+#    install:
+#      - nvidia-vaapi-driver # https://fedoraproject.org/wiki/Firefox_Hardware_acceleration#Video_decoding
 
   - type: files
     files:

@@ -20,10 +20,9 @@ modules:
   # https://blue-build.org/reference/modules/akmods
   - type: akmods
     base: main
-    nvidia-driver:
-      - nvidia
-        # nvidia : for the old nvidia propietary driver, compatible with Maxwell and newer cards (but not Blackwell)
-        # nvidia-open : for the new kernel-open driver, to be used in Turing and newer cards
+    # nvidia : for the old nvidia propietary driver, compatible with Maxwell and newer cards (but not Blackwell)
+    # nvidia-open : for the new kernel-open driver, to be used in Turing and newer cards
+    nvidia-driver: nvidia
 
   - from-file: common-repos.yml
   - from-file: common-packages.yml

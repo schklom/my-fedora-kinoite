@@ -23,6 +23,8 @@ modules:
     # nvidia : for the old nvidia propietary driver, compatible with Maxwell and newer cards (but not Blackwell)
     # nvidia-open : for the new kernel-open driver, to be used in Turing and newer cards
     nvidia-driver: nvidia
+    install:
+      - ublue-os-nvidia-addons
 
   - from-file: common-repos.yml
   - from-file: common-packages.yml

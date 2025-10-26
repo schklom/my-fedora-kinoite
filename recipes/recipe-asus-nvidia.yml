@@ -43,3 +43,6 @@ modules:
     files:
       - source: root_laptop
         destination: /
+
+  # because of akmods
+  - type: initramfs

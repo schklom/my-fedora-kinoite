@@ -76,6 +76,7 @@ modules:
           # - com.valvesoftware.Steam # Already in Bazzite
           # - net.lutris.Lutris
           - com.usebottles.bottles
+          - com.ranfdev.DistroShelf # manage distroboxes
           - com.dropbox.Client
           - org.zotero.Zotero
           # - org.gnome.OCRFeeder

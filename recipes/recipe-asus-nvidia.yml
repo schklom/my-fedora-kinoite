@@ -5,7 +5,7 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 # https://github.com/orgs/ublue-os/packages
-base-image: ghcr.io/ublue-os/kinoite-main
+base-image: ghcr.io/ublue-os/kinoite-nvidia
 # https://github.com/secureblue/secureblue
 # base-image: ghcr.io/secureblue/kinoite-asus-nvidia-userns-hardened
 # base-image: ghcr.io/ublue-os/bazzite-asus-nvidia
@@ -15,20 +15,6 @@ image-version: latest # 40, or latest is also supported if you want new updates 
 # you can include multiple instances of the same module
 # https://blue-build.org/learn/getting-started/
 modules:
-
-  # Needed to prevent akmods-nvidia bug
-  - type: rpm-ostree
-    remove:
-      - mesa-vulkan-drivers.i686
-
-  # Nvidia drivers for Asus are no longer prebuilt
-  # https://blue-build.org/reference/modules/akmods
-  - type: akmods
-    base: main
-    # nvidia : for the old nvidia propietary driver, compatible with Maxwell and newer cards (but not Blackwell)
-    # nvidia-open : for the new kernel-open driver, to be used in Turing and newer cards
-    nvidia-driver: nvidia
-    install: [] # empty list = no extra kmods
 
   - from-file: common-repos.yml
   - from-file: common-packages.yml

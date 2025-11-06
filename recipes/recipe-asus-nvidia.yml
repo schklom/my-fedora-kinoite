@@ -17,11 +17,9 @@ image-version: latest # 40, or latest is also supported if you want new updates 
 modules:
 
   # Needed to prevent akmods-nvidia bug
-  - type: dnf
+  - type: rpm-ostree
     remove:
-      auto-remove: false
-      packages:
-        - mesa-vulkan-drivers.i686
+      - mesa-vulkan-drivers.i686
 
   # Nvidia drivers for Asus are no longer prebuilt
   # https://blue-build.org/reference/modules/akmods

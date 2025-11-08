@@ -19,6 +19,10 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
   rpm-ostree rebase ostree-unverified-registry:ghcr.io/schklom/my-fedora-kinoite-asus-nvidia:latest
   ```
+  of
+  ```
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/schklom/my-fedora-server:latest
+  ```
 - Reboot to complete the rebase:
   ```
   systemctl reboot
@@ -30,6 +34,10 @@ To rebase an existing atomic Fedora installation to the latest build:
   or
   ```
   rpm-ostree rebase ostree-image-signed:docker://ghcr.io/schklom/my-fedora-kinoite-asus-nvidia:latest
+  ```
+  or
+  ```
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/schklom/my-fedora-server:latest
   ```
 - Reboot again to complete the installation
   ```
@@ -43,6 +51,11 @@ The `latest` tag will automatically point to the latest build. That build will s
 ```
 version=$(grep -Po "VERSION_ID=\d+" /etc/os-release | grep -Po "\d+")
 rpm-ostree rebase fedora:fedora/${version}/x86_64/kinoite
+```
+or (Not sure about this)
+```
+version=$(grep -Po "VERSION_ID=\d+" /etc/os-release | grep -Po "\d+")
+rpm-ostree rebase fedora:fedora/${version}/x86_64/coreos
 ```
 
 ## ISO

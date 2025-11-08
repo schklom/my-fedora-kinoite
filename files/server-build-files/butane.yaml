@@ -1,0 +1,38 @@
+# https://coreos.github.io/butane/examples/
+variant: fcos
+version: 1.1.0
+passwd:
+  users:
+    - name: main
+      # The file paths are relative to the directory specified with the --files-dir command-line option, which must be provided.
+      ssh_authorized_keys_local:
+        - dell.pub
+        - pixel.pub
+        - asus.pub
+      home_dir: /home/user1
+      # no_create_home: true
+      groups:
+        - wheel
+        - plugdev
+        - docker
+      shell: /bin/bash
+  # storage:
+  #   files:
+  #     - path: /opt/file
+  #       contents:
+  #         inline: Hello, world!
+  #       mode: 0644
+  #       user:
+  #         id: 500
+  #       group:
+  #         id: 501
+  #   - path: /opt/file2
+  #     contents:
+  #       source: http://example.com/file2
+  #       compression: gzip
+  #       verification:
+  #         hash: sha512-4ee6a9d20cc0e6c7ee187daffa6822bdef7f4cebe109eff44b235f97e45dc3d7a5bb932efc841192e46618f48a6f4f5bc0d15fd74b1038abf46bf4b4fd409f2e
+  #     mode: 0644
+  #   trees:
+  #   - local: tree
+  #     path: /etc/files

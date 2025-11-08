@@ -9,6 +9,7 @@ on:
       - "**.md"
       - "recipe.yml"
       - "LICENSE"
+      - "butane.yaml"
     branches:
       - my-changes
 

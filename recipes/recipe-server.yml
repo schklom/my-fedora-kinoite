@@ -1,0 +1,70 @@
+# image will be published to ghcr.io/<user>/<name>
+name: my-fedora-server
+# description will be included in the image's metadata
+description: This is my personal OS image.
+
+# the base image to build on top of (FROM) and the version tag to use
+# https://github.com/orgs/ublue-os/packages
+base-image: ghcr.io/ublue-os/ucore-minimal
+image-version: latest
+# https://github.com/secureblue/secureblue
+# base-image: ghcr.io/secureblue/kinoite-main-userns-hardened
+# base-image: ghcr.io/ublue-os/bazzite
+# image-version: stable # 40, or latest is also supported if you want new updates ASAP
+
+# https://blue-build.org/learn/getting-started/
+modules:
+  # - from-file: undo-bazzite-crap.yml
+  - from-file: common-repos.yml
+  #- from-file: common-packages.yml
+  - type: signing
+
+  # Remove bloatware from https://github.com/ublue-os/ucore?tab=readme-ov-file#ucore-minimal
+  - type: rpm-ostree
+    remove:
+      - cockpit
+      - firewalld
+      - podman
+      - podman-compose
+      - tailscale
+      - wireguard-tools
+      - tmux
+
+  - type: rpm-ostree
+    install:
+      - butane
+
+  - type: files
+    files:
+      - source: root_server
+        destination: /
+
+  # Try without once see if there are issues
+  # # Setup Docker CE and remove moby-engine (https://docs.fedoraproject.org/en-US/fedora-coreos/docker-ce/)
+  # - type: rpm-ostree
+  #   repos:
+  #     - https://download.docker.com/linux/fedora/docker-ce.repo
+  #   key:
+  #     - https://download.docker.com/linux/fedora/gpg # MAYBE NOT NEEDED
+  #   remove:
+  #     - moby-engine
+  #     - containerd
+  #     - runc
+  #     - docker-cli
+  #   install:
+  #     - docker-ce
+  #     # https://docs.docker.com/engine/install/fedora/#install-using-the-repository
+  #     - docker-ce-cli
+  #     - containerd.io
+  #     - docker-buildx-plugin
+  #     - docker-compose-plugin
+
+  # MAYBE NOT NEEDED
+  #- type: rpm-ostree
+  #  install:
+  #    - mesa-libGL
+  #    - mesa-vulkan-drivers
+  #    - mesa-dri-drivers
+  #    - rocm-opencl-runtime
+  #    - rocm-opencl
+  

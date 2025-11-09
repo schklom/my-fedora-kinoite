@@ -14,6 +14,7 @@ modules:
 
       # Trivalent https://github.com/secureblue/Trivalent (Vanadium for desktop)
       - trivalent
+      - mullvad-vpn
 
       # KDE
       - kdepim-addons # For the Event Calendar widget, to work with external calendars
@@ -48,15 +49,7 @@ modules:
       # Backup
       - btrfs-assistant # (pre-installed on Bazzite)
 
-    remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
-  # Mozilla/Cisco openh264
-  - type: rpm-ostree
-    install:
+      # Mozilla/Cisco openh264
       # Ensure openh264 is available for all softwares (https://fedoraproject.org/wiki/OpenH264)
       - gstreamer1-plugin-openh264
       - openh264
@@ -65,4 +58,9 @@ modules:
       # - ffmpeg-free # free or not, can't have both
 
     remove:
+      # example: removing firefox (in favor of the flatpak)
+      # "firefox" is the main package, "firefox-langpacks" is a dependency
+      - firefox
+      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
       - noopenh264 # Pointless for now in Fedora 40: https://discussion.fedoraproject.org/t/h264-video-playback-in-firefox-in-f40/111872
+

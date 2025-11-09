@@ -43,6 +43,13 @@ modules:
       - https://repo.secureblue.dev/secureblue.repo
     keys:
       - https://repo.secureblue.dev/secureblue.gpg
+
+  # MullvadVPN (https://mullvad.net/en/download/vpn/linux)
+  - type: rpm-ostree
+    repos:
+      - https://repository.mullvad.net/rpm/stable/mullvad.repo
+    keys:
+      - https://repository.mullvad.net/rpm/mullvad-keyring.asc
   
   # Needed to install mozilla-openh264
   # Thanks to https://discussion.fedoraproject.org/t/fedora-cisco-openh264-repo-does-not-work/100570/10

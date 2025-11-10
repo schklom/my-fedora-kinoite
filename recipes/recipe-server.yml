@@ -24,7 +24,7 @@ modules:
     remove:
       # - cockpit
       - firewalld
-      - podman
+      # - podman # bootc depends on podman
       - podman-compose
       - tailscale
       - wireguard-tools

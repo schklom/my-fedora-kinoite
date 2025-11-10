@@ -30,8 +30,9 @@ modules:
       - wireguard-tools
       - tmux
 
-      # toolbox depends on podman
+      # These depend on podman
       - toolbox
+      - cockpit-podman
 
     install:
       - butane

@@ -24,13 +24,14 @@ modules:
     remove:
       # - cockpit
       - firewalld
-      # - podman # bootc depends on podman
+      - podman
       - podman-compose
       - tailscale
       - wireguard-tools
       - tmux
 
       # These depend on podman
+      - bootc
       - toolbox
       - cockpit-podman
 

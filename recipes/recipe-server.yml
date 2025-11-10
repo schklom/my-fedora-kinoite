@@ -30,7 +30,6 @@ modules:
       - wireguard-tools
       - tmux
 
-  - type: rpm-ostree
     install:
       - butane
 
@@ -38,6 +37,19 @@ modules:
     files:
       - source: server/root
         destination: /
+
+  # https://github.com/gsauthof/dracut-sshd
+  - type: rpm-ostree
+    repos:
+      - https://copr.fedorainfracloud.org/coprs/gsauthof/dracut-sshd/repo/fedora-%OS_VERSION%/gsauthof-dracut-sshd-fedora-%OS_VERSION%.repo
+    keys:
+      - https://download.copr.fedorainfracloud.org/results/gsauthof/dracut-sshd/pubkey.gpg
+    install:
+      - dracut-sshd
+      - systemd-networkd
+      - dracut-network
+  
+  - type: initramfs
 
   # Try without once see if there are issues
   # # Setup Docker CE and remove moby-engine (https://docs.fedoraproject.org/en-US/fedora-coreos/docker-ce/)

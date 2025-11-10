@@ -36,7 +36,7 @@ modules:
 
   - type: files
     files:
-      - source: root_server
+      - source: server/root
         destination: /
 
   # Try without once see if there are issues

@@ -22,7 +22,7 @@ modules:
   # Remove bloatware from https://github.com/ublue-os/ucore?tab=readme-ov-file#ucore-minimal
   - type: rpm-ostree
     remove:
-      - cockpit
+      # - cockpit
       - firewalld
       - podman
       - podman-compose

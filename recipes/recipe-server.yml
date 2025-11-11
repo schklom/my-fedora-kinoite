@@ -5,8 +5,8 @@ description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
 # https://github.com/orgs/ublue-os/packages
-base-image: ghcr.io/ublue-os/ucore-minimal
-image-version: latest
+base-image: quay.io/fedora/fedora-coreos
+image-version: stable
 # https://github.com/secureblue/secureblue
 # base-image: ghcr.io/secureblue/kinoite-main-userns-hardened
 # base-image: ghcr.io/ublue-os/bazzite
@@ -19,22 +19,19 @@ modules:
   #- from-file: common-packages.yml
   - type: signing
 
+  # Remove Zincati and the message of the day reminder to use OCI
+  - type: systemd
+    user:
+      disabled:
+        - zincati.service
+        - coreos-oci-migration-motd.service
+    system:
+      disabled:
+        - zincati.service
+        - coreos-oci-migration-motd.service
+
   # Remove bloatware from https://github.com/ublue-os/ucore?tab=readme-ov-file#ucore-minimal
   - type: rpm-ostree
-    remove:
-      # - cockpit
-      - firewalld
-      - podman
-      - podman-compose
-      - tailscale
-      - wireguard-tools
-      - tmux
-
-      # These depend on podman
-      - bootc
-      - toolbox
-      - cockpit-podman
-
     install:
       - butane
 

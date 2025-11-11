@@ -34,6 +34,11 @@ modules:
   - type: rpm-ostree
     install:
       - butane
+  
+  # https://github.com/ublue-os/ucore/blob/a770b0894c7d1f3edf04b3302e360f03ba621bcf/ucore/install-ucore-minimal.sh#L84C20-L84C41
+  - type: rpm-ostree
+    install:
+      - intel-compute-runtime
 
   - type: files
     files:

@@ -26,6 +26,15 @@ modules:
     nvidia-driver: nvidia
     install: [] # empty list = no extra kmods
 
+  # https://blue-build.org/reference/modules/kargs/
+  - type: kargs
+    kargs:
+      # https://rpmfusion.org/Howto/NVIDIA#OSTree_.28Silverblue.2FKinoite.2Fetc.29
+      - rd.driver.blacklist=nouveau,nova_core
+      - modprobe.blacklist=nouveau,nova_core
+      # ujust -n configure-nvidia
+      - nvidia-drm.modeset=1
+
   - from-file: common-repos.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml
@@ -63,8 +72,8 @@ modules:
     install:
       - lm_sensors
       - xsensors # GUI for lm_sensors
-      - fancontrol-gui
-      - fancontrol-gui-plasmoid # KDE Plasma widget for fancontrol
+      #- fancontrol-gui
+      #- fancontrol-gui-plasmoid # KDE Plasma widget for fancontrol
 
   - type: files
     files:

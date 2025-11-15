@@ -17,11 +17,6 @@ image-version: latest # 40, or latest is also supported if you want new updates 
 # https://blue-build.org/learn/getting-started/
 modules:
 
-  # Needed to prevent akmods-nvidia bug
-  - type: rpm-ostree
-    remove:
-      - mesa-vulkan-drivers.i686
-
   # Nvidia drivers for Asus are no longer prebuilt
   # https://blue-build.org/reference/modules/akmods
   - type: akmods

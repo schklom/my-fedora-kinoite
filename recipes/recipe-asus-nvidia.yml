@@ -48,6 +48,14 @@ modules:
         - asusd.service
         - supergfxd.service
 
+  # Thermal sensors and fan control
+  - type: rpm-ostree
+    install:
+      - lm_sensors
+      - xsensors # GUI for lm_sensors
+      - fancontrol-gui
+      - fancontrol-gui-plasmoid # KDE Plasma widget for fancontrol
+
   - type: files
     files:
       - source: root_laptop

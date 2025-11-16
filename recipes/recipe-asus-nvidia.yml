@@ -27,6 +27,11 @@ modules:
     install: [] # empty list = no extra kmods
 
   # https://blue-build.org/reference/modules/kargs/
+  # sudo rpm-ostree kargs --append-if-missing=nvidia-drm.modeset=1 --append-if-missing=modprobe.blacklist=nouveau,nova_core --append-if-missing=rd.driver.blacklist=nouveau,nova_core --append-if-missing=vconsole.keymap=fr
+  # `cat /boot/loader/entries/*.conf` -> static boot loader configuration entries that define potential boot options before boot.
+  # `cat /proc/cmdline` -> real-time kernel command line used by the running kernel after boot
+  # New kargs: rpm-ostree kargs
+  # /usr/lib/bootc/kargs.d/* -> bootc kernel arguments from below
   - type: kargs
     kargs:
       # https://rpmfusion.org/Howto/NVIDIA#OSTree_.28Silverblue.2FKinoite.2Fetc.29

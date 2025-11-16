@@ -35,6 +35,10 @@ modules:
       # ujust -n configure-nvidia
       - nvidia-drm.modeset=1
 
+      # Keyboard
+      # https://github.com/fedora-silverblue/issue-tracker/issues/3
+      - vconsole.keymap=fr
+
   - from-file: common-repos.yml
   - from-file: common-packages.yml
   - from-file: common-flatpaks.yml

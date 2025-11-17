@@ -14,6 +14,14 @@ image-version: stable
 
 # https://blue-build.org/learn/getting-started/
 modules:
+
+  # https://blue-build.org/reference/modules/kargs/
+  - type: kargs
+    kargs:
+      # Keyboard
+      # https://github.com/fedora-silverblue/issue-tracker/issues/3
+      - vconsole.keymap=no
+  
   # - from-file: undo-bazzite-crap.yml
   #- from-file: common-repos.yml
   #- from-file: common-packages.yml

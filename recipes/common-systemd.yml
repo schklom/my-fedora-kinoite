@@ -5,3 +5,4 @@ modules:
         #- flatpak-automatic.service
         - setup-grub.service
         - systemd-timesyncd.service
+        - mullvad-daemon.service

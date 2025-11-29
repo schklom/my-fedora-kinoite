@@ -48,11 +48,11 @@ modules:
       - qemu
       - virt-manager
 
-      # Lets Amarok discover iPods natively
-      - amarok
-      - libgpod
-      - libmtp
-      - kio_mtp
+      ## Lets Amarok discover iPods natively
+      #- amarok
+      #- libgpod
+      #- libmtp
+      #- kio_mtp
 
   # RPMSPHERE for veracrypt
   - type: rpm-ostree

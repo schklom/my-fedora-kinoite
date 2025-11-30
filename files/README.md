@@ -17,6 +17,7 @@
 ## Privacy
 - [/etc/sysctl.d/10-ip6-privacy.conf](root/etc/sysctl.d/10-ip6-privacy.conf) -> ipv6 privacy addresses
 - Only laptop [/etc/NetworkManager/conf.d/rand_mac.conf](root_laptop/etc/NetworkManager/conf.d/rand_mac.conf) -> ipv6 privacy addresses
+- Only laptop [/etc/NetworkManager/conf.d/dhcp-dont-send-hostname.conf](root_laptop/etc/NetworkManager/conf.d/dhcp-dont-send-hostname.conf) -> don't send hostname to router
 
 # Miscellaneous
 - [/usr/share/ublue-os/firstboot/yafti.yml](root/usr/share/ublue-os/firstboot/yafti.yml) -> YAFTI for first boot to remove Fedora Flatpak repository

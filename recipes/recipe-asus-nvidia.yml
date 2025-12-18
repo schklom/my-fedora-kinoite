@@ -7,10 +7,16 @@ description: This is my personal OS image.
 # https://github.com/orgs/ublue-os/packages
 #base-image: ghcr.io/ublue-os/kinoite-nvidia
 base-image: ghcr.io/ublue-os/kinoite-main
+image-version: latest # 40, or latest is also supported if you want new updates ASAP. stable only for bazzite
+
+## https://github.com/blue-build/base-images/blob/main/recipes/fedora-kinoite-nvidia-latest.yml
+#base-image: ghcr.io/blue-build/base-images/fedora-kinoite-nvidia
+#image-version: latest # 40, or latest is also supported if you want new updates ASAP. stable only for bazzite
+
 # https://github.com/secureblue/secureblue
 # base-image: ghcr.io/secureblue/kinoite-asus-nvidia-userns-hardened
 # base-image: ghcr.io/ublue-os/bazzite-asus-nvidia
-image-version: latest # 40, or latest is also supported if you want new updates ASAP. stable only for bazzite
+#image-version: latest # 40, or latest is also supported if you want new updates ASAP. stable only for bazzite
 
 # module configuration, executed in order
 # you can include multiple instances of the same module

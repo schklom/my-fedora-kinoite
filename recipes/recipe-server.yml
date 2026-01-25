@@ -43,9 +43,16 @@ modules:
     install:
       # https://github.com/ublue-os/ucore/blob/a770b0894c7d1f3edf04b3302e360f03ba621bcf/ucore/install-ucore-minimal.sh#L84C20-L84C41
       - intel-compute-runtime
-      # crontab
+
+  # Cron
+  - type: rpm-ostree
+    install:
       - cronie
       - cronie-anacron
+  - type: systemd
+    system:
+      enabled:
+        - crond.service
 
   # https://github.com/gsauthof/dracut-sshd
   # SSH into server before the main OS has fully booted (for LUKS)

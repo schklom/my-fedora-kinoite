@@ -86,7 +86,7 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       # Rootless https://docs.docker.com/engine/security/rootless/
-      - uidmap
+      # - shadow-utils # equivalent to uidmap, pre-installed on coreos
       - fuse-overlayfs
   # https://docs.docker.com/engine/security/rootless/
   - type: systemd

@@ -86,8 +86,7 @@ modules:
       - docker-buildx-plugin
       - docker-compose-plugin
       # Rootless https://docs.docker.com/engine/security/rootless/
-      - newuidmap
-      - newgidmap
+      - uidmap
       - fuse-overlayfs
   # https://docs.docker.com/engine/security/rootless/
   - type: systemd

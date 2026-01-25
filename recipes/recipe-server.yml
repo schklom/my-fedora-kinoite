@@ -70,7 +70,7 @@ modules:
   - type: rpm-ostree
     remove:
       - podman
-      - podman-docker
+      # - podman-docker # does not exist
   # Setup Docker CE and remove moby-engine (https://docs.fedoraproject.org/en-US/fedora-coreos/docker-ce/)
   - type: rpm-ostree
     repos:

@@ -95,6 +95,12 @@ modules:
         - docker.service
         - docker.socket
 
+  # # Wi-Fi
+  # # https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-enabling-wifi/
+  # - type: rpm-ostree
+    # install:
+      # - mt7xxx-firmware
+
   # MAYBE NOT NEEDED
   #- type: rpm-ostree
   #  install:

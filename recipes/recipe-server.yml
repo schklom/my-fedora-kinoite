@@ -32,6 +32,13 @@ modules:
       - source: server/root
         destination: /
 
+  # Convenient packages
+  - type: rpm-ostree
+    install:
+      - chkrootkit
+      - htop
+      - duf
+
   # Remove the message of the day reminder to use OCI
   - type: systemd
     system:

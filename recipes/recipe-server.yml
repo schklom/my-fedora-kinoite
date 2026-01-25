@@ -21,39 +21,31 @@ modules:
       # Keyboard
       # https://github.com/fedora-silverblue/issue-tracker/issues/3
       - vconsole.keymap=no
-  
+
   # - from-file: undo-bazzite-crap.yml
   #- from-file: common-repos.yml
   #- from-file: common-packages.yml
   - type: signing
-
-  # Remove Zincati and the message of the day reminder to use OCI
-  - type: systemd
-    user:
-      disabled:
-        - zincati.service
-        - coreos-oci-migration-motd.service
-    system:
-      disabled:
-        - zincati.service
-        - coreos-oci-migration-motd.service
-
-  # Remove bloatware from https://github.com/ublue-os/ucore?tab=readme-ov-file#ucore-minimal
-  - type: rpm-ostree
-    install:
-      - butane
-  
-  # https://github.com/ublue-os/ucore/blob/a770b0894c7d1f3edf04b3302e360f03ba621bcf/ucore/install-ucore-minimal.sh#L84C20-L84C41
-  - type: rpm-ostree
-    install:
-      - intel-compute-runtime
 
   - type: files
     files:
       - source: server/root
         destination: /
 
+  # Remove the message of the day reminder to use OCI
+  - type: systemd
+    system:
+      disabled:
+        - coreos-oci-migration-motd.service
+
+  # https://github.com/ublue-os/ucore?tab=readme-ov-file#ucore-minimal
+  - type: rpm-ostree
+    install:
+      # https://github.com/ublue-os/ucore/blob/a770b0894c7d1f3edf04b3302e360f03ba621bcf/ucore/install-ucore-minimal.sh#L84C20-L84C41
+      - intel-compute-runtime
+
   # https://github.com/gsauthof/dracut-sshd
+  # SSH into server before the main OS has fully booted (for LUKS)
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/gsauthof/dracut-sshd/repo/fedora-%OS_VERSION%/gsauthof-dracut-sshd-fedora-%OS_VERSION%.repo
@@ -63,28 +55,40 @@ modules:
       - dracut-sshd
       - systemd-networkd
       - dracut-network
-  
-  - type: initramfs
 
-  # Try without once see if there are issues
-  # # Setup Docker CE and remove moby-engine (https://docs.fedoraproject.org/en-US/fedora-coreos/docker-ce/)
-  # - type: rpm-ostree
-  #   repos:
-  #     - https://download.docker.com/linux/fedora/docker-ce.repo
-  #   key:
-  #     - https://download.docker.com/linux/fedora/gpg # MAYBE NOT NEEDED
-  #   remove:
-  #     - moby-engine
-  #     - containerd
-  #     - runc
-  #     - docker-cli
-  #   install:
-  #     - docker-ce
-  #     # https://docs.docker.com/engine/install/fedora/#install-using-the-repository
-  #     - docker-ce-cli
-  #     - containerd.io
-  #     - docker-buildx-plugin
-  #     - docker-compose-plugin
+  # Docker
+  - type: rpm-ostree
+    remove:
+      - podman
+      - podman-docker
+  # Setup Docker CE and remove moby-engine (https://docs.fedoraproject.org/en-US/fedora-coreos/docker-ce/)
+  - type: rpm-ostree
+    repos:
+      - https://download.docker.com/linux/fedora/docker-ce.repo
+    key:
+      - https://download.docker.com/linux/fedora/gpg # MAYBE NOT NEEDED
+    remove:
+      - moby-engine
+      - containerd
+      - runc
+      - docker-cli
+    install:
+      - docker-ce
+      # https://docs.docker.com/engine/install/fedora/#install-using-the-repository
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+      # Rootless https://docs.docker.com/engine/security/rootless/
+      - newuidmap
+      - newgidmap
+      - fuse-overlayfs
+  # https://docs.docker.com/engine/security/rootless/
+  - type: systemd
+    system:
+      disabled:
+        - docker.service
+        - docker.socket
 
   # MAYBE NOT NEEDED
   #- type: rpm-ostree
@@ -94,4 +98,6 @@ modules:
   #    - mesa-dri-drivers
   #    - rocm-opencl-runtime
   #    - rocm-opencl
-  
+
+
+  - type: initramfs

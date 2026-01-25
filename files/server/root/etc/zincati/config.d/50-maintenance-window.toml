@@ -1,0 +1,13 @@
+# https://coreos.github.io/zincati/usage/updates-strategy/
+# sudo journalctl -b 0 -e -u zincati.service
+[updates]
+strategy = "periodic"
+# enabled = true
+
+[updates.periodic]
+time_zone = "localtime"
+
+[[updates.periodic.window]]
+days = [ "Sun" ]
+start_time = "04:00"
+length_minutes = 60

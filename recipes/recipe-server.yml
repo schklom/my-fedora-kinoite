@@ -67,11 +67,6 @@ modules:
       - dracut-network
 
   # Docker
-  - type: rpm-ostree
-    remove:
-      - podman
-      # - podman-docker # does not exist
-      - toolbox # toolbox depends on podman
   # Setup Docker CE and remove moby-engine (https://docs.fedoraproject.org/en-US/fedora-coreos/docker-ce/)
   - type: rpm-ostree
     repos:

@@ -59,6 +59,13 @@ modules:
   - from-file: usbguard.yml
   - from-file: common-intel-drivers.yml
 
+  # Temporary, it is causing build issues
+  - type: rpm-ostree
+    replace:
+      - from-repo: https://copr.fedorainfracloud.org/coprs/g/kdesig/kde-final/repo/fedora-%OS_VERSION%/group_kdesig-kde-final-fedora-%OS_VERSION%.repo
+        packages:
+          - libplasma
+
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/lukenukem/asus-linux/repo/fedora-%OS_VERSION%/lukenukem-asus-linux-fedora-%OS_VERSION%.repo
@@ -67,11 +74,6 @@ modules:
       # https://github.com/ublue-os/hwe/blob/main/nvidia-install.sh
       - asusctl
       - supergfxctl
-
-  # Temporary, it is causing build issues
-  - type: rpm-ostree
-    remove:
-      - libplasma  # Exact conflicting version from updates-archive
 
   # Found repo from kinoite-asus-nvidia via "rpm -qi supergfxctl-plasmoid"
   - type: rpm-ostree

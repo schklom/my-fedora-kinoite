@@ -58,11 +58,6 @@ modules:
   - from-file: desktop-dotfiles.yml
   - from-file: usbguard.yml
   - from-file: common-intel-drivers.yml
-
-  # Temporary, it is causing build issues
-  - type: rpm-ostree
-    install:
-      - https://download.copr.fedorainfracloud.org/results/@kdesig/kde-final/fedora-43-x86_64/09711941-libplasma/libplasma-6.5.0-1.fc43.x86_64.rpm
   
   - type: rpm-ostree
     repos:
@@ -73,13 +68,14 @@ modules:
       - asusctl
       - supergfxctl
 
-  # Found repo from kinoite-asus-nvidia via "rpm -qi supergfxctl-plasmoid"
-  - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/jhyub/supergfxctl-plasmoid/repo/fedora-%OS_VERSION%/jhyub-supergfxctl-plasmoid-fedora-%OS_VERSION%.repo
-    install:
-      # https://github.com/ublue-os/hwe/blob/main/nvidia-install.sh
-      - supergfxctl-plasmoid
+  # supergfxctl-plasmoid is crashing due to version issues with libplasma. try later to uncomment it
+  ## Found repo from kinoite-asus-nvidia via "rpm -qi supergfxctl-plasmoid"
+  #- type: rpm-ostree
+  #  repos:
+  #    - https://copr.fedorainfracloud.org/coprs/jhyub/supergfxctl-plasmoid/repo/fedora-%OS_VERSION%/jhyub-supergfxctl-plasmoid-fedora-%OS_VERSION%.repo
+  #  install:
+  #    # https://github.com/ublue-os/hwe/blob/main/nvidia-install.sh
+  #    - supergfxctl-plasmoid
   
   - type: systemd
     system:

@@ -71,7 +71,7 @@ modules:
   # Temporary, it is causing build issues
   - type: rpm-ostree
     remove:
-      - libplasma-6.5.3-1.fc43.x86_64  # Exact conflicting version from updates-archive
+      - libplasma  # Exact conflicting version from updates-archive
 
   # Found repo from kinoite-asus-nvidia via "rpm -qi supergfxctl-plasmoid"
   - type: rpm-ostree

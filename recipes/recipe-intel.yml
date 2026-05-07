@@ -66,3 +66,7 @@ modules:
 #      - scope: system
 #        install:
 #          - org.kde.amarok # iTunes replacement
+
+  - type: script
+    scripts:
+      - install-libdvdcss.sh # run files/scripts/install-libdvdcss.sh

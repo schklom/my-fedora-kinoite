@@ -25,17 +25,18 @@ modules:
       # https://docs.fedoraproject.org/en-US/quick-docs/rpmfusion-setup/#_enabling_the_rpm_fusion_repositories_for_ostree_based_systems
       - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
 
-  # RPMFUSION FREE TAINTED
-  - type: rpm-ostree
-    repos:
-      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free-tainted.repo
-    keys:
-      # https://rpmfusion.org/keys
-      - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
-    install:
-      # To read DVDs (install libdvdcss) (https://itsfoss.com/play-dvd-fedora/)
-      - https://download1.rpmfusion.org/free/fedora/releases/%OS_VERSION%/Everything/x86_64/os/Packages/r/rpmfusion-free-release-tainted-%OS_VERSION%-1.noarch.rpm
-      # - rpmfusion-free-release-tainted ONLY WORKS ON BAZZITE
+  # # RPMFUSION FREE TAINTED (commented because it is sometimes not on the same version as the others and causes dependencies crashes at build)
+  # (instead, I can just install libdvdcss manually from a script)
+  # - type: rpm-ostree
+  #   repos:
+  #     - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/rpmfusion-free-tainted.repo
+  #   keys:
+  #     # https://rpmfusion.org/keys
+  #     - https://github.com/rpmfusion/rpmfusion-free-release/raw/refs/heads/master/RPM-GPG-KEY-rpmfusion-free-fedora-2020
+  #   install:
+  #     # To read DVDs (install libdvdcss) (https://itsfoss.com/play-dvd-fedora/)
+  #     - https://download1.rpmfusion.org/free/fedora/releases/%OS_VERSION%/Everything/x86_64/os/Packages/r/rpmfusion-free-release-tainted-%OS_VERSION%-1.noarch.rpm
+  #     # - rpmfusion-free-release-tainted ONLY WORKS ON BAZZITE
 
   # Secureblue (to install Trivalent https://github.com/secureblue/Trivalent = Vanadium for desktop)
   - type: rpm-ostree

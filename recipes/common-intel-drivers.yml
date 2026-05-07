@@ -12,6 +12,5 @@ modules:
       - gstreamer1-vaapi
       - libva
       - libva-utils
-      - gstreamer1-vaapi
       # - ffmpeg
       - mesa-dri-drivers

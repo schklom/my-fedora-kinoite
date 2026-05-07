@@ -9,8 +9,13 @@ modules:
       - intel-media-driver
       - libva-intel-media-driver
       - igt-gpu-tools # To check GPU usage via sudo intel_gpu_top
-      - gstreamer1-vaapi
       - libva
       - libva-utils
       # - ffmpeg
       - mesa-dri-drivers
+      # gstreamer1-plugins-bad-free is pulled (likely) by intel-media-driver (can check with `rpm-ostree whatprovides '*gstreamer1-plugins-bad-free*'`)
+      # https://packages.fedoraproject.org/pkgs/gstreamer1-plugins-bad-free/gstreamer1-plugins-bad-free/fedora-44.html
+      # gstreamer1-plugins-bad-free, since 2026-01-28, "Obsolete/provide gstreamer1-vaapi", so gstreamer1-vaapi version is too old for gstreamer1-plugins-bad-free
+      # - gstreamer1-vaapi
+      # Just in case, i can also explicitly install gstreamer1-plugins-bad-free to provide VAAPI even if intel-media-driver stops depending on it
+      - gstreamer1-plugins-bad-free

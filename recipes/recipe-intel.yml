@@ -67,6 +67,7 @@ modules:
 #        install:
 #          - org.kde.amarok # iTunes replacement
 
-  - type: script
-    scripts:
-      - install-libdvdcss.sh # run files/scripts/install-libdvdcss.sh
+  # libdvdcss is already provided by fedora-multimedia, no need to install it as extra
+  # - type: script
+  #   scripts:
+  #     - install-libdvdcss.sh # run files/scripts/install-libdvdcss.sh

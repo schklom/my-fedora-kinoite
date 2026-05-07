@@ -96,5 +96,9 @@ modules:
       - source: root_laptop
         destination: /
 
+  - type: script
+    scripts:
+      - install-libdvdcss.sh # run files/scripts/install-libdvdcss.sh
+
   # because of akmods
   - type: initramfs

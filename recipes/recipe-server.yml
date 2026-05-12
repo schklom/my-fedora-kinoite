@@ -39,12 +39,6 @@ modules:
       - htop
       - duf
 
-  # Remove the message of the day reminder to use OCI
-  - type: systemd
-    system:
-      disabled:
-        - coreos-oci-migration-motd.service
-
   # https://github.com/ublue-os/ucore?tab=readme-ov-file#ucore-minimal
   - type: rpm-ostree
     install:

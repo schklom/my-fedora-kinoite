@@ -37,7 +37,7 @@ jobs:
           # !! Add your recipes here
           - recipe-intel.yml
           - recipe-asus-nvidia.yml
-          - recipe-server.yml
+          #- recipe-server.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

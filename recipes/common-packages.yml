@@ -34,6 +34,9 @@ modules:
       - xdotool
       - xinput
 
+      # Speech-to-text (https://github.com/ideasman42/nerd-dictation)
+      - parec
+
       # Media
       # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
       - libdvdcss # From repository (pre-installed) fedora-multimedia or (newest version) rpmfusion-free-release-tainted

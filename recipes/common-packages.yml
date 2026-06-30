@@ -35,7 +35,8 @@ modules:
       - xinput
 
       # Speech-to-text (https://github.com/ideasman42/nerd-dictation)
-      - parec
+      # parec is not available
+      - sox
 
       # Media
       # Read DVDs (https://itsfoss.com/play-dvd-fedora/)
